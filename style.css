@@ -1,0 +1,8 @@
+html, body, h1 {
+    background-color: rgb(199, 197, 197);
+    font-size: larger; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgb(0, 183, 255);
+}
+
+p {
+    color: red; 
+}
