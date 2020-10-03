@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel = "stylesheet"
+        type = "text/css"
+        href = "SignUp.css"/>
+    </head>
+    <body>
+        <div class ="header">
+            <!--<img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>-->
+            <b1>
+                <button type="button" id="btnSignUp">Create your new account</button>
+                <!--<button type="button" id="btnSignIn" onclick="openForm()">Sign In</button>-->
+            </b1>
+            <h1>i-SEE FLICKS</h1>
+            
+        </div>
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Sign In</h1>
+            
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+
+                <button type="submit" class="btn createAcc" onclick="newAccount()">Create New Account</button>
+
+              </form>
+        </div>
+
+
+    </body>
+
+   
+
+    
+
+</html>

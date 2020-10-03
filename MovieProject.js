@@ -5,3 +5,7 @@ function openForm() {
 function closeForm() {
 document.getElementById("myForm").style.display = "none";
 }
+
+function newAccount() {
+    location.href = "SignUp.html";
+}

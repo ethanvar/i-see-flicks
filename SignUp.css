@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Prata:regular');
+@import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:regular,700');
+
+html {
+    box-sizing: border-box;
+    background-color: rgb(77, 77, 77);
+}
+
+
+
+.header {
+    background-color: rgb(77, 77, 77);
+    
+}
+
+body {
+    margin: 0; 
+}
+
+.header b1 {
+    position: absolute;
+    top: 600px;
+    left: 10px;
+    right: 10px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header h1 {
+    margin: 0;
+    padding: 0;
+    text-align:center;
+    font-size: 52px; font-family: Prata, serif; color: white;
+    text-shadow: 3px 1px #00ccff;
+}
+
+.form-container {
+    max-width: 250px;
+    padding: 10px;
+    background-color: white;
+ 
+    text-align: center;
+}
+
+.form-container h1 {
+    font-family: Prata;
+}
+  
+  /* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+width: 88%;
+padding: 15px;
+margin: 5px 0 22px 0;
+border: none;
+background: #f1f1f1;
+}
+
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+background-color: rgb(182, 182, 182);
+color: white;
+padding: 16px 20px;
+border: none;
+cursor: pointer;
+width: 100%;
+margin-bottom:10px;
+opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+background-color: black;
+}
+
+.form-container .createAcc {
+    background-color: rgb(151, 151, 70);
+}
