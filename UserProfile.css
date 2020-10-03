@@ -1,0 +1,18 @@
+html {
+    box-sizing: border-box;
+    background-color: rgb(185,242,255);
+}
+
+
+
+.header {
+    background-color: rgb(42, 84, 92);
+    
+}
+
+.header i1 {
+    background-color: white;
+    position: absolute;
+    left: 700px;
+    right: 700px;
+}
