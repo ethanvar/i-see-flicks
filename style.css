@@ -6,8 +6,6 @@ html {
     background-color: whitesmoke;
 }
 
-
-
 .header {
     background-color: rgb(77, 77, 77);
     padding: 50px;
@@ -49,7 +47,22 @@ body {
 .sugMovies {
     background-color: rgb(182, 182, 182);
     padding: 120px;
-    position: static;
+    position: relative;
+}
+
+.sugMovies h1 {
+    text-align: center;
+
+}
+
+.sugMovieSlide {
+    display: none;
+}
+
+.sugtext {
+    font-size: large;
+    position: relative;
+    text-align: center;
 }
 
 .form-popup {

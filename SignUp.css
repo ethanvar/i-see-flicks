@@ -3,15 +3,16 @@
 
 html {
     box-sizing: border-box;
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(126, 178, 187);
 }
 
 
 
 .header {
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(42, 84, 92);
     
 }
+
 
 body {
     margin: 0; 
@@ -33,16 +34,17 @@ body {
     margin: 0;
     padding: 0;
     text-align:center;
-    font-size: 52px; font-family: Prata, serif; color: white;
+    font-size: 52px; font-family: Prata, serif; color: rgb(152, 187, 201);
     text-shadow: 3px 1px #00ccff;
 }
 
 .form-container {
-    max-width: 250px;
+    max-width: 300px;
     padding: 10px;
-    background-color: white;
- 
-    text-align: center;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 614px;
+    top: 100px;
 }
 
 .form-container h1 {
@@ -73,9 +75,9 @@ opacity: 0.8;
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-background-color: black;
+background-color: rgb(94, 94, 94);
 }
 
 .form-container .createAcc {
-    background-color: rgb(151, 151, 70);
+    background-color: rgb(212, 212, 171);
 }
