@@ -1,32 +1,55 @@
 @import url('https://fonts.googleapis.com/css?family=Prata:regular');
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:regular,700');
 
-html /*, body */{
+html {
     box-sizing: border-box;
-    background-color:white;
+    background-color: whitesmoke;
 }
+
+
 
 .header {
     background-color: rgb(77, 77, 77);
-    padding: 30px;
-    margin: 0;
+    padding: 50px;
 }
 
 body {
     margin: 0; 
 }
 
-p {
-    color: red; 
+.header b1 {
+    float: right;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-h1 {
+.header h1 {
+    text-align: left;
+    margin: 0;
+    padding: 0;
     text-align:left;
     font-size: 52px; font-family: Prata, serif; color: white;
     text-shadow: 3px 1px #00ccff;
 }
 
-i1 {
-    text-align:center;
+.header i1 {
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    left: 700px;
+    right: 700px;
 }
+
+.header p {
+    color: red; 
+}
+
+.sugMovies {
+    background-color: rgb(182, 182, 182);
+    padding: 120px;
+}
+
 
