@@ -2,12 +2,18 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat+Subrayada:regular,700');
 
 html /*, body */{
-    background-color: rgb(77, 77, 77);
+    box-sizing: border-box;
+    background-color:white;
 }
 
+.header {
+    background-color: rgb(77, 77, 77);
+    padding: 30px;
+    margin: 0;
+}
 
 body {
-    background-color: rgb(77, 77, 77);
+    margin: 0; 
 }
 
 p {
@@ -15,8 +21,12 @@ p {
 }
 
 h1 {
-    text-align:center;
+    text-align:left;
     font-size: 52px; font-family: Prata, serif; color: white;
     text-shadow: 3px 1px #00ccff;
+}
+
+i1 {
+    text-align:center;
 }
 
