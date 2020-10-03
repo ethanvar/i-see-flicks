@@ -10,6 +10,10 @@ function newAccount() {
     location.href = "SignUp.html";
 }
 
+function userProfile() {
+    location.href = "UserProfile.html";
+}
+
 var movieCounter = 0;
 sugMovies();
 
@@ -23,5 +27,5 @@ function sugMovies() {
   if (movieCounter > slides.length) {movieCounter = 1}    
 
   slides[movieCounter-1].style.display = "block";  
-  setTimeout(sugMovies, 2000); // Change image every 2 seconds
+  setTimeout(sugMovies, 2000);
 }

@@ -46,7 +46,7 @@ body {
 
 .sugMovies {
     background-color: rgb(182, 182, 182);
-    padding: 120px;
+    padding: 10px;
     position: relative;
 }
 
@@ -83,7 +83,6 @@ body {
     font-family: Prata;
 }
   
-  /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
 width: 88%;
 padding: 15px;
@@ -92,8 +91,6 @@ border: none;
 background: #f1f1f1;
 }
 
-
-/* Set a style for the submit/login button */
 .form-container .btn {
 background-color: rgb(182, 182, 182);
 color: white;
@@ -105,7 +102,6 @@ margin-bottom:10px;
 opacity: 0.8;
 }
 
-/* Add a red background color to the cancel button */
 .form-container .cancel {
 background-color: black;
 }

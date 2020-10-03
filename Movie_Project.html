@@ -9,7 +9,6 @@
         <div class ="header">
             <!--<img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>-->
             <b1>
-                <button type="button" id="btnSignUp">Sign Up</button>
                 <button type="button" id="btnSignIn" onclick="openForm()">Sign In</button>
                 <button type="button" id="btnSignOut">Sign Out</button>
             </b1>
@@ -23,7 +22,7 @@
 
         <div class ="sugMovies">
             <h1>Suggested Movies</h1>
-            
+
             <div class="sugMovieSlide">
                 <div class="sugtext">Movie One</div>
             </div>
@@ -46,12 +45,13 @@
                 <h1>Sign In</h1>
             
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" placeholder="Enter Email" name="email">
             
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="psw" >
             
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn" onclick="userProfile()">Login</button>
+                
                 <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
 
                 <button type="submit" class="btn createAcc" onclick="newAccount()">Create New Account</button>
@@ -62,9 +62,4 @@
 
         <script src="MovieProject.js"></script>
     </body>
-
-   
-
-    
-
 </html>

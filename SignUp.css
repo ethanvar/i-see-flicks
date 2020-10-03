@@ -3,7 +3,7 @@
 
 html {
     box-sizing: border-box;
-    background-color: rgb(126, 178, 187);
+    background-color: rgb(185,242,255);
 }
 
 
@@ -34,7 +34,7 @@ body {
     margin: 0;
     padding: 0;
     text-align:center;
-    font-size: 52px; font-family: Prata, serif; color: rgb(152, 187, 201);
+    font-size: 52px; font-family: Prata, serif; color: rgb(255, 255, 255);
     text-shadow: 3px 1px #00ccff;
 }
 
