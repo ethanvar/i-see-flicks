@@ -3,7 +3,9 @@ html {
     background-color: rgb(185,242,255);
 }
 
-
+body {
+    margin: 0;
+}
 
 .header {
     background-color: rgb(42, 84, 92);
@@ -15,4 +17,11 @@ html {
     position: absolute;
     left: 700px;
     right: 700px;
+}
+
+.userPfp {
+    background-color: /*rgb(182, 182, 182)*/ blue;
+    padding: 100px;
+    position: relative;
+    border: 2px solid black;
 }
