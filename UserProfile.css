@@ -29,7 +29,7 @@ body {
 
 .userPfp {
     background-color: rgb(182, 182, 182);
-    padding: 50px;
+    padding: 20px;
     position: relative;
     border: 2px solid black;
 }
@@ -42,10 +42,64 @@ body {
     width: 100%;
     margin-bottom:10px;
     opacity: 0.8;
-    p
+    position: relative;
+    top: 62px;
+    right: 145px;
+    
+}
+.userPfp h2 {
+    font-size: 14px;
+}
+.userPfp h3 {
+    font-size: 14px;
+    position: relative;
+    left: 70px;
+    bottom: 31px;
 }
 
-.recentReviews{
+
+.recentViewed{
     background-color: rgb(182, 182, 182);
+    padding: 80px;
     position: relative;
+    border: 2px solid black;
+    border-top: none;
 }
+
+.recentViewed h1 {
+    position: relative;
+    margin-block-end: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.recentMovies{
+    position: relative;
+    text-align: center;
+    bottom: 25px;
+}
+
+.topReviews{
+    background-color: rgb(182, 182, 182);
+    padding: 80px;
+    position: relative;
+    border: 2px solid black;
+    border-top: none;
+}
+
+.topReviews h1 {
+    position: relative;
+    margin-block-end: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.reviews{
+    position: relative;
+    text-align: center;
+    bottom: 25px;
+}
+
+
+
+
