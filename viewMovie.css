@@ -37,3 +37,16 @@ body {
     right: 700px;
 }
 
+.movieTrailer {
+    padding: 50px;
+    padding-top: 30px;
+}
+
+.movieTrailer p1{
+    position: relative;
+}
+
+.reviewSection {
+    background-color: white;
+    padding: 50px;
+}
