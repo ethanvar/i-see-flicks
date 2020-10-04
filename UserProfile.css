@@ -1,15 +1,23 @@
 html {
     box-sizing: border-box;
-    background-color: rgb(185,242,255);
-}
-
-body {
-    margin: 0;
+    background-color: whitesmoke;
 }
 
 .header {
-    background-color: rgb(42, 84, 92);
-    
+    background-color: rgb(77, 77, 77);
+    padding: 50px;
+}
+
+.header h1 {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 52px; font-family: Prata, serif; color: white;
+    text-shadow: 3px 1px #00ccff;
+}
+
+body {
+    margin: 0; 
 }
 
 .header i1 {
@@ -20,8 +28,24 @@ body {
 }
 
 .userPfp {
-    background-color: /*rgb(182, 182, 182)*/ blue;
-    padding: 100px;
+    background-color: rgb(182, 182, 182);
+    padding: 50px;
     position: relative;
     border: 2px solid black;
+}
+
+.userPfp b1 {
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+    p
+}
+
+.recentReviews{
+    background-color: rgb(182, 182, 182);
+    position: relative;
 }
