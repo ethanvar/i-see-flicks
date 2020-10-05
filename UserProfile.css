@@ -1,6 +1,5 @@
 html {
     box-sizing: border-box;
-    background-color: whitesmoke;
 }
 
 .header {
@@ -22,38 +21,70 @@ body {
 
 .header i1 {
     background-color: white;
-    position: absolute;
+    position: relative;
+    bottom: 40px;
     left: 700px;
     right: 700px;
 }
 
+.header .btnSignIn {
+    background-color: rgb(182, 182, 182);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom:10px;
+    opacity: 0.8;
+    position: relative;
+    top: 10px;
+    float: right;
+    border-radius: 2px;
+}
+
+.header .btnSignOut {
+    background-color: rgb(182, 182, 182);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom:10px;
+    opacity: 0.8;
+    position: relative;
+    right: 2px;
+    top: 10px;
+    float: right;
+    border-radius: 2px;
+}
+
+
 .userPfp {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255,255,255);
     padding: 20px;
     position: relative;
     border: 2px solid black;
 }
 
-.userPfp b1 {
+.userPfp .btnEdit {
+    background-color: rgb(182, 182, 182);
     color: white;
-    padding: 16px 20px;
+    padding: 4px 14px;
     border: none;
     cursor: pointer;
-    width: 100%;
     margin-bottom:10px;
-    opacity: 0.8;
+    opacity: 0.8;  
     position: relative;
-    top: 62px;
-    right: 145px;
-    
+    top: 20px;
+    right: 125px;
 }
+
+
 .userPfp h2 {
     font-size: 14px;
 }
 .userPfp h3 {
     font-size: 14px;
     position: relative;
-    left: 70px;
+    left: 80px;
     bottom: 31px;
 }
 
