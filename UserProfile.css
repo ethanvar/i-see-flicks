@@ -88,6 +88,10 @@ body {
     bottom: 31px;
 }
 
+.userPfp h4 {
+    position: relative;
+    float: center;
+}
 
 .recentViewed{
     background-color: rgb(255, 255, 255);
