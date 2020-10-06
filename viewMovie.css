@@ -65,6 +65,10 @@ body {
 .movieTrailer p1{
     position: relative;
 }
+.movieTrailer p6{
+    position: relative;
+    bottom: 220px;
+}
 
 .reviewSection {
     background-color: white;

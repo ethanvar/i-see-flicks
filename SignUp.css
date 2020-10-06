@@ -38,7 +38,7 @@ body {
     text-shadow: 3px 1px #00ccff;
 }
 
-.form-container {
+.signupContainer {
     max-width: 300px;
     padding: 10px;
     background-color: rgb(255, 255, 255);
@@ -47,12 +47,12 @@ body {
     top: 100px;
 }
 
-.form-container h1 {
+.signupContainer h1 {
     font-family: Prata;
 }
   
   /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
+.signupContainer input[type=text], .signupContainer input[type=password] {
 width: 88%;
 padding: 15px;
 margin: 5px 0 22px 0;
@@ -62,7 +62,7 @@ background: #f1f1f1;
 
 
 /* Set a style for the submit/login button */
-.form-container .btn {
+.signupContainer .btn {
 background-color: rgb(182, 182, 182);
 color: white;
 padding: 16px 20px;
@@ -74,10 +74,10 @@ opacity: 0.8;
 }
 
 /* Add a red background color to the cancel button */
-.form-container .cancel {
+.signupContainer .cancel {
 background-color: rgb(94, 94, 94);
 }
 
-.form-container .createAcc {
+.signupContainer .createAcc {
     background-color: rgb(212, 212, 171);
 }
