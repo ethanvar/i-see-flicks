@@ -65,7 +65,7 @@ body {
     text-align: center;
 }
 
-.form-popup {
+.signinPopup {
     display: none;
     bottom: 0;
     right: 15px;
@@ -73,17 +73,17 @@ body {
     z-index: -1;
 }
 
-.form-container {
+.signinContainer {
     max-width: 250px;
     padding: 10px;
     background-color: white;
 }
 
-.form-container h1 {
+.signinContainer h1 {
     font-family: Prata;
 }
   
-.form-container input[type=text], .form-container input[type=password] {
+.signinContainer input[type=text], .signinContainer input[type=password] {
     width: 88%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -91,7 +91,7 @@ body {
     background: #f1f1f1;
 }
 
-.form-container .btn {
+.signinContainer .btn {
     background-color: rgb(182, 182, 182);
     color: white;
     padding: 16px 20px;
@@ -102,11 +102,11 @@ body {
     opacity: 0.8;
 }
 
-.form-container .cancel {
+.signinContainer .cancel {
     background-color: black;
 }
 
-.form-container .createAcc {
+.signinContainer .createAcc {
     background-color: rgb(151, 151, 70);
 }
 
