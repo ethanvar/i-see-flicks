@@ -53,7 +53,7 @@ body {
   
   /* Full-width input fields */
 .signupContainer input[type=text], .signupContainer input[type=password] {
-width: 88%;
+width: 90%;
 padding: 15px;
 margin: 5px 0 22px 0;
 border: none;
@@ -63,7 +63,7 @@ background: #f1f1f1;
 
 /* Set a style for the submit/login button */
 .signupContainer .btn {
-background-color: rgb(182, 182, 182);
+background-color: rgb(170, 170, 170);
 color: white;
 padding: 16px 20px;
 border: none;
