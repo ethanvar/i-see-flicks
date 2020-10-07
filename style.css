@@ -46,7 +46,7 @@ body {
 
 .sugMovies {
     background-color: rgb(182, 182, 182);
-    padding: 10px;
+    padding: 30px;
     position: relative;
 }
 
@@ -65,11 +65,42 @@ body {
     text-align: center;
 }
 
+.watchList {
+    background-color: rgb(228, 228, 228);
+    padding: 50px;
+    border:2px solid black;
+}
+
+.watchList p1{
+    text-align: center;
+
+}
+.trendingActors{
+    background-color: rgb(228, 228, 228);
+    padding: 80px;
+    position: relative;
+    border: 2px solid black;
+    border-top: none;
+}
+
+.trendingActors h1 {
+    position: relative;
+    margin-block-end: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.actors{
+    position: relative;
+    text-align: center;
+    bottom: 25px;
+}
+
 .signinPopup {
     display: none;
     bottom: 0;
     right: 15px;
-    border: 3px solid #f1f1f1;
+    border: 3px solid #ffffff;
     z-index: -1;
 }
 
@@ -109,5 +140,7 @@ body {
 .signinContainer .createAcc {
     background-color: rgb(151, 151, 70);
 }
+
+
 
 
