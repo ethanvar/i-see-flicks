@@ -1,4 +1,4 @@
-var http = require('http');
+/*var http = require('http');
 var fs = require('fs');
 var http = require('http');
 
@@ -16,4 +16,27 @@ fs.readFile('./Movie_Project.html', function (err, html) {
         response.write(html);  
         response.end();  
     }).listen(PORT); 
-});
+});*/
+var http = require('http');
+var fs = require('fs');
+var path = require('path');
+
+http.createServer(function (request, response) {
+    console.log('request starting...');
+
+    var filePath = '.' + request.url;
+    if (filePath == './')
+        filePath = './Movie_Project.html';
+
+    var extname = path.extname(filePath);
+    var contentType = 'text/html';
+    switch (extname) {
+        case '.js':
+            contentType = 'text/javascript';
+            break;
+        case '.css':
+            contentType = 'text/css';
+            break;
+    }
+}).listen(8125);
+console.log('Server running at http://127.0.0.1:8125/');
