@@ -39,20 +39,21 @@ server.listen(3000);
 console.log('Server running at http://127.0.0.1:3000');*/
 
 //1.1
-const http = require('http');
+/*const http = require('http');
 
 //2.1
 const fs = require("fs");
 
-/*const express = require('express')
+const express = require('express')
 
 var path = require('path');
 
 var app = express();
 
 app.use(express.static('i-see-flicks'));
-*/
+
 //1.2
+
 let server = http.createServer(function (request, response) {
 	//3.1
 	console.log("URL: " + request.url);
@@ -65,7 +66,7 @@ let server = http.createServer(function (request, response) {
           var fileContents = fs.readFileSync('./Movie_Project.css', {encoding: 'utf8'});
           response.write(fileContents);
         }
-      }
+      } 
 
 	if (request.method === "GET"){
 
@@ -109,14 +110,37 @@ let server = http.createServer(function (request, response) {
 					return;
 				}
 				response.statusCode = 200;
-				response.setHeader("Content-Type", "style/css");
+				response.setHeader("Content-Type", "stylesheets/css");
 				response.end(data);
 			});
 		}
         //5.2
 	}
 	//4.5
-});
+}); 
 //1.3
 server.listen(3000);
-console.log('Server running at http://127.0.0.1:3000/');
+console.log('Server running at http://127.0.0.1:3000/'); */
+
+var express = require('express');
+var app = express();
+var path = require('path');
+
+//app.use(express.static(__dirname + '/i-see-flicks'));
+
+//app.use('/html', express.static(__dirname + 'Movie_Project.html'))
+//app.use(express.static('Movie_Project.css'))
+//app.use(express.static('MovieProject.js'))
+
+//app.use('/js',express.static(path.join(__dirname, 'javascripts')));
+//app.use('/css',express.static(path.join(__dirname, 'stylesheets')));
+
+app.use(express.static(__dirname));
+// viewed at http://localhost:3000
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname,'Movie_Project.html'));
+});
+
+
+app.listen(3000);
+console.log('Server running at http://localhost:3000');
