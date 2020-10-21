@@ -1,43 +1,3 @@
-/*
-const http = require('http')
-const fs = require('fs')
-
-let server = http.createServer(function (request, response) {
-  console.log("URL: " + request.url); 
-
-  if (request.method === 'GET') {
-    if (request.url === '/' || request.url ===  '/Movie_Project.html' ) {
-        fs.readFile('index.html', function(err, data) {
-          response.statusCode = 200;
-          response.setHeader("Content-Type", 'text/html')
-          response.end(data)
-
-        })
-    }
-    else if (request.url === '/' || request.url ==='/MovieProject.js') {
-        fs.readFile('MovieProject.js', function(err, data){
-            response.statusCode = 200;
-            response.setHeader("Content-Type", 'application/javascript')
-            response.end(data);  
-        })
-    }
-    
-    else if (request.url === '/' || request.url ==='/Movie_Project.css') {
-        fs.readFile('Movie_Project.css', function(err, data){
-            response.statusCode = 200;
-            response.setHeader("Content-Type", 'style/css')
-            response.end(data);  
-        })
-    } 
- 
-  }
-
-})
-
-server.listen(3000);
-
-console.log('Server running at http://127.0.0.1:3000');*/
-
 //1.1
 /*const http = require('http');
 
@@ -126,21 +86,31 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-//app.use(express.static(__dirname + '/i-see-flicks'));
-
-//app.use('/html', express.static(__dirname + 'Movie_Project.html'))
-//app.use(express.static('Movie_Project.css'))
-//app.use(express.static('MovieProject.js'))
-
-//app.use('/js',express.static(path.join(__dirname, 'javascripts')));
-//app.use('/css',express.static(path.join(__dirname, 'stylesheets')));
-
 app.use(express.static(__dirname));
 // viewed at http://localhost:3000
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname,'Movie_Project.html'));
 });
 
+var movies = [{}];
+
+function getSearch(req, res) {
+	res.render("Movie_Project.html");
+}
+
+function searchForMovie(req, res) {
+	let body = req.body;
+	console.log(body);
+	movies.forEach(m => {
+		if (m.Title == body.searchMovie) {
+			console.log("Found " + m.Title);
+			res.render("Movie_Project.html", {movie : m})
+			ret
+		}
+	})
+}
 
 app.listen(3000);
 console.log('Server running at http://localhost:3000');
+
+

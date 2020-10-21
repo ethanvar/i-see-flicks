@@ -4,6 +4,8 @@
         <link rel = "stylesheet"
         type = "text/css"
         href = "Movie_Project.css"/>
+        <script src="User.js"></script>
+        <script src="MovieProject.js"></script>
     </head>
     <body>
         <div class ="header">
@@ -55,24 +57,21 @@
         </div>
 
         <div class="signinPopup" id="myForm">
-            <form action="/action_page.php" class="signinContainer">
+            <form class="signinContainer">
                 <h1>Sign In</h1>
             
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" id="email" placeholder="Enter Email" name="email" required>
             
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" id="psw" placeholder="Enter Password" name="psw" required>
             
-                <button type="submit" class="btn" onclick="userProfile()">Login</button>
-                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+                <button type="button" class="btn" onclick="userProfile()">Login</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
 
                 <button type="submit" class="btn createAcc" onclick="newAccount()">Create New Account</button>
 
               </form>
         </div>
-
-
-        <script src="MovieProject.js"></script>
     </body>
 </html>

@@ -12,10 +12,6 @@ function newAccount() {
     location.href = "SignUp.html";
 }
 
-function userProfile() {
-    location.href = "UserProfile.html";
-}
-
 var movieCounter = 0;
 sugMovies();
 

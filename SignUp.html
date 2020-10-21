@@ -16,29 +16,29 @@
         </div>
 
         <div class="signupPopup" id="myForm">
-            <form action="/action_page.php" class="signupContainer">
+            <form class="signupContainer">
                 <h1>Create Account</h1>
                 
                 <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" required>
+                <input type="text" id = "name" placeholder="Enter Name" name="name" required>
 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" id = 'email' iplaceholder="Enter Email" name="email" required>
             
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="at least 8 characters" name="psw" required>
+                <input type="password" id = 'psw' placeholder="at least 8 characters" name="psw" required>
 
                 <label for="repsw"><b>Re-enter Password</b></label>
-                <input type="password" name="repsw" required>
+                <input type="password" id = 'repsw' name="repsw" required>
             
-                <button type="submit" class="btn cancel" onclick="closeForm()">Home</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Home</button>
 
-                <button type="submit" class="btn createAcc" onclick="newAccount()">Create your new account</button>
+                <button type="button" class="btn createAcc" onclick="newAccount()">Create your new account</button>
 
               </form>
         </div>
 
-
+        <script src="User.js"></script>
     </body>
 
    
