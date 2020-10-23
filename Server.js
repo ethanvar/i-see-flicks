@@ -92,23 +92,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname,'Movie_Project.html'));
 });
 
-var movies = [{}];
 
-function getSearch(req, res) {
-	res.render("Movie_Project.html");
-}
-
-function searchForMovie(req, res) {
-	let body = req.body;
-	console.log(body);
-	movies.forEach(m => {
-		if (m.Title == body.searchMovie) {
-			console.log("Found " + m.Title);
-			res.render("Movie_Project.html", {movie : m})
-			ret
-		}
-	})
-}
 
 app.listen(3000);
 console.log('Server running at http://localhost:3000');

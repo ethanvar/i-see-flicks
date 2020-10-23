@@ -6,6 +6,7 @@
         href = "Movie_Project.css"/>
         <script src="User.js"></script>
         <script src="MovieProject.js"></script>
+        
     </head>
     <body>
         <div class ="header">
@@ -16,8 +17,14 @@
             <h1>i-SEE FLICKS</h1>
             
             <i1>
-                <input type="text" id="searchBox" placeholder="Search..."></input>
+                <input placeholder="search" autocomplete="off" type="text" id="search" name="search" />
             </i1>
+            <i2>
+                <button type="submit" id="btnSearch" class="btnSearch">Search</button>
+            </i2>
+
+            <ul id="movieList"></ul>
+            <script src="SearchBar.js"></script>
         </div>
 
         <div class ="sugMovies">
@@ -60,8 +67,8 @@
             <form class="signinContainer">
                 <h1>Sign In</h1>
             
-                <label for="email"><b>Email</b></label>
-                <input type="text" id="email" placeholder="Enter Email" name="email" required>
+                <label for="name"><b>Name</b></label>
+                <input type="text" id="name" placeholder="Enter Email" name="name" required>
             
                 <label for="psw"><b>Password</b></label>
                 <input type="password" id="psw" placeholder="Enter Password" name="psw" required>

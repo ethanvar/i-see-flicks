@@ -1,4 +1,8 @@
-
+var users = [
+  {name: 'A', password: '1234'},
+   {name: "B", password: 1234},
+   {name: "C", password: 1234}
+];
 
 function openForm() {
     document.getElementById("myForm").style.display = "block";
@@ -24,6 +28,6 @@ function sugMovies() {
   movieCounter++;
   if (movieCounter > slides.length) {movieCounter = 1}    
 
-  slides[movieCounter-1].style.display = "block";  
+  //slides[movieCounter-1].style.display = "block";  
   setTimeout(sugMovies, 2000);
 }

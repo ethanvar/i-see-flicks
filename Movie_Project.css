@@ -43,6 +43,26 @@ body {
     right: 700px;
 }
 
+.header i2 {
+    position: relative;
+    left: 815px;
+    bottom: 77px;
+}
+
+.header ul {
+    position: relative;
+    left: 640px;
+    bottom: 70px;
+   
+}
+
+.header ul li {
+    display:block;
+    padding: 15px 10px 17px 13px;   
+}
+
+
+
 
 .sugMovies {
     background-color: rgb(182, 182, 182);

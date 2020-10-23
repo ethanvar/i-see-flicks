@@ -1,27 +1,30 @@
 var users = [
    {name: 'A', password: '1234'},
-    {name: "B", password: 1234},
-    {name: "C", password: 1234}
+    {name: "B", password: '1234'},
+    {name: "C", password: '1234'}
 ];
 
 
 function doesExist(newUser) {
-     let doesExist  = users.forEach(Item => {
-         if (Item.name === newUser.name) {
-             return true;
-         }
-     })
+    let exist = false;
+    users.forEach(item => {
+        if (item.name === newUser.name) {
+            exist = true;
+        }
+    })
      
-     return doesExist;
+     return exist;
 }
 
 function createUser(newUser) {
     console.log("checking validity of name and password");
     if (newUser.name === null || newUser.password === null) {
+        console.log('Nothing Entered');
         return null;
     }
     console.log("Checking validity of existence");
     if (doesExist(newUser)) {
+        console.log('Not Valid');
         return null;
     }
 
@@ -37,7 +40,6 @@ function createUser(newUser) {
     console.log(users);
 }
 
-//createUser({name: "matt", password: "ethan"})
 function newAccount() {
     let x = document.getElementById("name").value;
     let y = document.getElementById("psw").value;
@@ -45,15 +47,16 @@ function newAccount() {
 }
 
 function userProfile() {
-    let x = document.getElementById("email").value;
+    let x = document.getElementById("name").value;
     let y = document.getElementById("psw").value;
     console.log(x);
     console.log(y);
-    if (doesExist({name: 'A', password: '1234'})) {
-        console.log("it worked");
+    if (doesExist({name: x, password: y})) {
+        console.log("Access Granted");
         location.href = "UserProfile.html";
     }
     else {
-        console.log("it not work");
+        console.log("Access Not Granted");
     }
 }
+

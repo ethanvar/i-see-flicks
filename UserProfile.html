@@ -21,9 +21,27 @@
 
         <div class ="userPfp">
             <img src = "ProfilePic.png" alt = "Profile" width="150" position: absolute>
-            <b1><button type="button" class="btnEdit">Edit Profile</button></b1> 
-            <h2>Followers: 0</h2>
-            <h3>Following: 0</h3>
+            <button type="button" class="btnEdit">Edit Profile</button>
+            <button type="button" class="followerBtn" onclick="showModal()">Follower list</button>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+                  <ul id="followerList"></ul>
+                </div>
+            </div>
+
+
+
+            <b3><button type="button" class="followingBtn" onclick="showFModal()">Following list</button></b3>
+            <div id="myFModal" class="fModal">
+                <!-- Modal content -->
+                <div class="fModal-content">
+                  <span class="fClose" onclick="closeFModal()">&times;</span>
+                  <ul id="followingList"></ul>
+                </div>
+            </div>
+
             <h4>About: Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna 
                 aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
@@ -59,5 +77,6 @@
 
 
         <script src="MovieProject.js"></script>
+        <script src="UserProfile.js"></script>
     </body>
 </html>
