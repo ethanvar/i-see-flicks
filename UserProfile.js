@@ -39,11 +39,13 @@ function fillFollowerList(users) {
 
 const fList = document.getElementById('followingList');
 function fillFollowingList(users) {
+    console.log("yessss" + fList)
     clearList(fList);
     users.forEach(item => {
         let litem = document.createElement("li");
         let text = document.createTextNode(item.name);
         litem.id = text;
+        litem.onclick = function() { removeFromFollowing(item.name); };
         litem.appendChild(text);
         fList.appendChild(litem);
     })
@@ -54,6 +56,11 @@ function addToFollowing(texte) {
         console.log("adding")
         followedback.push({name: texte})
     }
+}
+
+function removeFromFollowing(texte) {
+    console.log("adding")
+    followedback.pop({name: texte})  
 }
 
 function clearList(someList) {
