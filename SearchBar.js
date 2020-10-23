@@ -17,8 +17,8 @@ function setList(collection) {
     for (const movie of collection) {
         const item = document.createElement("li");
         const text = document.createTextNode(movie.Title);
+        litem.onclick = function() { testClick(movie.Title);};
         item.appendChild(text);
-        item.setAttribute("onclick", "testClick()");
         list.appendChild(item);
         
     }
