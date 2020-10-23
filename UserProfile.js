@@ -7,20 +7,20 @@ var allFollowers = [
     {name: 'Arjun', password: '1234'},
     {name: "Penny", password: '1234'},
     {name: "Chett", password: '1234'},
- ];
+];
 
- var followedback = [
- ];
+var followedback = [];
 
 
-function doesExist(newUser) {
+function doesFExist(newUser) {
     let exist = false;
     followedback.forEach(item => {
+        console.log(item)
         if (item.name === newUser.name) {
+            console.log("true")
             exist = true;
         }
-    })
-     
+    })     
     return exist;
 }
 
@@ -50,7 +50,8 @@ function fillFollowingList(users) {
 }
 
 function addToFollowing(texte) {
-    if (!doesExist(texte)){
+    if (!doesFExist({name: texte})){
+        console.log("adding")
         followedback.push({name: texte})
     }
 }
