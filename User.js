@@ -29,14 +29,14 @@ function createUser(newUser) {
     }
 
 
-    console.log("We are good! Lets create the user... ");
-    console.log("Your new User now looks like this: ");
+    console.log("It is working, proceed! ");
+    console.log("New user: ");
 
     console.log(newUser);
-    console.log("Adding User... ");
+    console.log("Adding new user ");
     users.push(newUser);
 
-    console.log("Your User DB looks like this now: ");
+    console.log("The User database: ");
     console.log(users);
 }
 
@@ -44,6 +44,10 @@ function newAccount() {
     let x = document.getElementById("name").value;
     let y = document.getElementById("psw").value;
     createUser({name: x, password: y})
+}
+
+function goHome(){
+    href = location.href = "Movie_Project.html"
 }
 
 function userProfile() {

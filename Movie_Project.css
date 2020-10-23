@@ -36,22 +36,14 @@ body {
 }
 
 .header i1 {
-    background-color: white;
-    position: absolute;
-    top: 45px;
-    left: 700px;
-    right: 700px;
-}
-
-.header i2 {
     position: relative;
-    left: 815px;
+    left: 885px;
     bottom: 77px;
 }
 
 .header ul {
     position: relative;
-    left: 640px;
+    left: 860px;
     bottom: 70px;
    
 }

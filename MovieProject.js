@@ -1,9 +1,3 @@
-var users = [
-  {name: 'A', password: '1234'},
-   {name: "B", password: 1234},
-   {name: "C", password: 1234}
-];
-
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }

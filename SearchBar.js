@@ -1,4 +1,4 @@
-const movies = [{"Title" : "incredibles"},
+var movies = [{"Title" : "incredibles"},
                 {"Title" : "avengers"},
                 {"Title" : "transformers"},
                 {"Title" : "toy Story"},
@@ -10,21 +10,45 @@ const movies = [{"Title" : "incredibles"},
                 {"Title" : "grown ups"},
 ];
 
-const list = document.getElementById('movieList');
+var searchMovie = document.getElementById("search");
+searchMovie.addEventListener("input", (event) => {
+    let value = event.target.value;
+    if (value && value.length >= 1) {
+        value = value.toLowerCase();
+        fillMovieList(movies.filter(movie => {
+            return movie.Title.includes(value);
+        }))
+    }else if (value && value.length <= 0){
+        clearList();
+    }
+});  
 
-function setList(collection) {
+var list = document.getElementById('movieList');
+
+function fillMovieList(collection) {
     clearList();
-    for (const movie of collection) {
-        const item = document.createElement("li");
-        const text = document.createTextNode(movie.Title);
-        litem.onclick = function() { testClick(movie.Title);};
-        item.appendChild(text);
-        list.appendChild(item);
-        
+    for (let movie of collection) {
+        var movieItem = document.createElement("li");
+        var text = document.createTextNode(movie.Title);
+        movieItem.onclick = function() {redirect()};
+        movieItem.id = text;
+        movieItem.appendChild(text);
+        list.appendChild(movieItem);
     }
-    if (collection.length === 0) {
-        setNoResults();
+    if (collection.length == 0) {
+        NoResultsFound();
     }
+}
+function NoResultsFound() {
+    var movieItem = document.createElement("li");
+    var text = document.createTextNode("No results could be found");
+    movieItem.id = text;
+    movieItem.appendChild(text);
+    list.appendChild(movieItem);
+}
+
+function redirect() {
+    location.href = "viewMovie.html";
 }
 
 function clearList() {
@@ -33,25 +57,6 @@ function clearList() {
     }
 }
 
-function setNoResults() {
-    const item = document.createElement("li");
-    const text = document.createTextNode("No results found");
-    item.appendChild(text);
-    list.appendChild(item);
-}
 
-const searchInput = document.getElementById('search');
 
-searchInput.addEventListener('input', (event) => {
-    let value = event.target.value;
-    if (value && value.trim().length > 0) {
-        value = value.trim().toLowerCase();
-        setList(movies.filter(movie => {
-            return movie.Title.includes(value);
-        }))
-        
-    }else{
-        clearList();
-    }
-});  
 

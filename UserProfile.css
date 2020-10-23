@@ -20,11 +20,21 @@ body {
 }
 
 .header i1 {
-    background-color: white;
     position: relative;
-    bottom: 40px;
-    left: 700px;
-    right: 700px;
+    left: 885px;
+    bottom: 77px;
+}
+
+.header ul {
+    position: relative;
+    left: 860px;
+    bottom: 70px;
+   
+}
+
+.header ul li {
+    display:block;
+    padding: 15px 10px 17px 13px;   
 }
 
 .header .btnSignIn {
@@ -148,6 +158,14 @@ body {
     position: relative;
     text-align: center;
     bottom: 25px;
+}
+
+.sugUsers{
+    background-color: rgb(255, 255, 255);
+    padding: 80px;
+    position: relative;
+    border: 2px solid black;
+    border-top: none;
 }
 
 

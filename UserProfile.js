@@ -9,6 +9,29 @@ var allFollowers = [
     {name: "Chett", password: '1234'},
 ];
 
+var sugUsers = [
+    {name: 'Matthew', password: '1234'},
+    {name: "Liam", password: '1234'},
+    {name: "Thomas", password: '1234'},
+    {name: 'Brody', password: '1234'},
+    {name: "Daniel", password: '1234'},
+    {name: "Dylan", password: '1234'},
+];
+
+var sugList = document.getElementById('sugUsersList');
+function fillSugList(users) {
+    clearList(sugList);
+    users.forEach(item => {
+        let litem = document.createElement("li");
+        let text = document.createTextNode(item.name);
+        litem.id = text;
+        litem.onclick = function() { addToFollowing(item.name); };
+        litem.addEventListener('click', function(e){e.target.style.color = 'gray';})
+        litem.appendChild(text);
+        sugList.appendChild(litem);
+    })
+}
+fillSugList(sugUsers);
 var followedback = [];
 
 
@@ -32,6 +55,7 @@ function fillFollowerList(users) {
         let text = document.createTextNode(item.name);
         litem.id = text;
         litem.onclick = function() { addToFollowing(item.name); };
+        litem.addEventListener('click', function(e){e.target.style.color = 'blue';})
         litem.appendChild(text);
         list.appendChild(litem);
     })
@@ -46,6 +70,7 @@ function fillFollowingList(users) {
         let text = document.createTextNode(item.name);
         litem.id = text;
         litem.onclick = function() { removeFromFollowing(item.name); };
+        litem.addEventListener('click', function(e){e.target.style.color = 'gray';})
         litem.appendChild(text);
         fList.appendChild(litem);
     })
@@ -63,6 +88,7 @@ function removeFromFollowing(texte) {
     followedback.pop({name: texte})  
 }
 
+
 function clearList(someList) {
     while (someList.firstChild) {
         someList.removeChild(someList.firstChild);
@@ -71,21 +97,19 @@ function clearList(someList) {
 
 let modal = document.getElementById("myModal");
 function showModal() {
-    console.log("yooopo")
+    console.log("showModal")
     fillFollowerList(allFollowers)
     modal.style.display = "block";
 }
 function closeModal() {
-    console.log("yooopo")
     modal.style.display = "none";
 }
 let fModal = document.getElementById("myFModal");
 function showFModal() {
-    console.log(followedback)
+    console.log("showFModal")
     fillFollowingList(followedback)
     fModal.style.display = "block";
 }
 function closeFModal() {
-    console.log("yooopo")
     fModal.style.display = "none";
 }
