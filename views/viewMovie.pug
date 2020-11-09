@@ -1,0 +1,29 @@
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet' type='text/css' href='viewMovie.css')
+  body
+    .header
+      // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
+      b1
+        button.btnSignIn(type='button' onclick='openForm()') Sign In
+        button.btnSignOut(type='button') Sign Out
+      h1 i-SEE FLICKS
+      i1
+        input#searchBox(type='text' placeholder='Search...')
+    .movieTrailer
+      h1#movieName Movie Name (Year)
+      video(width='320' height='240' controls='') OK
+      p6 Synopsis:
+      .movieRating
+        h1 Ice Meter: -------
+      p1 Pg-13
+      p2 Time
+      p3 Director:
+      p4 Writers:
+      p5 Stars:
+    .reviewSection
+      h1 Review Movie
+      textarea#writeReview(name='writeReview' rows='4' cols='50' placeholder='Leave a review...')
+      input(type='submit' value='Submit')
+    script(src='SearchBar.js')

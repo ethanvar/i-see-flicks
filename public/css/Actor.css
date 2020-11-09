@@ -1,0 +1,122 @@
+html {
+    box-sizing: border-box;
+    background-color: whitesmoke;
+}
+
+.header {
+    background-color: rgb(77, 77, 77);
+    padding: 50px;
+}
+
+body {
+    margin: 0; 
+}
+
+.header .btnSignIn {
+    background-color: rgb(182, 182, 182);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom:10px;
+    opacity: 0.8;
+    position: relative;
+    top: 10px;
+    float: right;
+    border-radius: 2px;
+}
+
+.header .btnSignOut {
+    background-color: rgb(182, 182, 182);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom:10px;
+    opacity: 0.8;
+    position: relative;
+    right: 2px;
+    top: 10px;
+    float: right;
+    border-radius: 2px;
+}
+
+.header h1 {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-size: 52px; font-family: Prata, serif; color: white;
+    text-shadow: 3px 1px #00ccff;
+}
+
+.header i1 {
+    position: relative;
+    left: 885px;
+    bottom: 77px;
+}
+
+.header ul {
+    position: relative;
+    left: 860px;
+    bottom: 70px;
+   
+}
+
+.header ul li {
+    display:block;
+    padding: 15px 10px 17px 13px;   
+}
+
+.actor {
+    padding: 50px;
+    padding-top: 30px;
+}
+
+.actor p1 {
+    font-size: 12px;
+    position: relative;
+    bottom : 135px;
+    
+}
+
+.actor p2 {
+    font-size: 12px;
+    position: relative;
+    top: 15px;
+    right: 295px;
+    
+}
+
+.knownFor {
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    position: relative;
+    border: 2px solid rgb(195, 201, 200);
+}
+.knownFor h1 {
+    text-align: center;
+}
+
+.movieSlide {
+    display: none;
+}
+
+.movietext {
+    font-size: large;
+    position: relative;
+    text-align: center;
+}
+
+.filmography {
+    padding: 20px;
+}
+
+.filmography h1{
+    position: relative;
+    text-align: center;
+}
+
+.films{
+    position: relative;
+    text-align: center;
+}

@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet' type='text/css' href='Actor.css')
+  body
+    .header
+      // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
+      b1
+        button.btnSignIn(type='button' onclick='openForm()') Sign In
+        button.btnSignOut(type='button') Sign Out
+      h1 i-SEE FLICKS
+      i1
+        input#searchBox(type='text' placeholder='Search...')
+    .actor
+      h1 Actor Name
+      img(src='ProfilePic.png' alt='Profile' width='150' position:='' relative='')
+      p1 Grew up... Started career as...
+      p2 Born: Month xx, xxxx
+    .knownFor
+      h1 Known For
+      .movieSlide
+        .movietext Movie One
+      .movieSlide
+        .movietext Movie Two
+      .movieSlide
+        .movietext Movie Three
+      .movieSlide
+        .movietext Movie Four
+      .movieSlide
+        .movietext Movie Five
+    .filmography
+    h1 Filmography
+    .films
+      p1 Film 1
+      p2 Film 2
+      p3 Film 3
+      p4 Film 4
+      p5 Film 5
+    script(src='Actor.js')
