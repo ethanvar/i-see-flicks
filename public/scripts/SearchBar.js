@@ -53,7 +53,7 @@ function NoResultsFound() {
 }
 
 function redirect() {
-    location.href = "viewMovie.html";
+    location.href = "/viewMovie";
 }
 
 function clearList() {

@@ -57,7 +57,7 @@ function userProfile() {
     console.log(y);
     if (doesExist({name: x, password: y})) {
         console.log("Access Granted");
-        location.href = "UserProfile.html";
+        location.href = "/UserProfile";
     }
     else {
         console.log("Access Not Granted");

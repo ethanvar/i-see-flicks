@@ -6,15 +6,7 @@ html
         script(src='/scripts/User.js')
         script(src='/scripts/MovieProject.js')
     body
-        .header
-            // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
-            b1
-                button.btnSignIn(type='submit' onclick='openForm()') Sign In
-            h1 i-SEE FLICKS
-            i1
-                input#search(placeholder='search' autocomplete='off' type='text' name='search')
-            ul#movieList
-            script(src='/scripts/SearchBar.js')
+        include ../partials/header
         .sugMovies
             h1 Suggested Movies
             .sugMovieSlide

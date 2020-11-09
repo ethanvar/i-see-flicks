@@ -7,7 +7,7 @@ document.getElementById("myForm").style.display = "none";
 }
 
 function newAccount() {
-    location.href = "SignUp.html";
+    location.href = "/SignUp";
 }
 
 var movieCounter = 0;
