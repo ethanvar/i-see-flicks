@@ -1,0 +1,62 @@
+doctype html
+html(lang='en')
+  head
+    link(rel='stylesheet' type='text/css' href='UserProfile.css')
+  body
+    .header
+      // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
+      b1
+        button.btnSignIn(type='button' onclick='openForm()') Sign In
+        button.btnSignOut(type='button') Sign Out
+      h1 i-SEE FLICKS
+      i1
+        input.searchBox(type='text' placeholder='Search...')
+    .userPfp
+      h1#userName Username
+      img(src='ProfilePic.png' alt='Profile' width='150' position:='' absolute='')
+      button.btnEdit(type='button') Edit Profile
+      button.followerBtn(type='button' onclick='showModal()') Follower list
+      #myModal.modal
+        // Modal content
+        .modal-content
+          span.close(onclick='closeModal()') ×
+          ul#followerList
+      b3
+        button.followingBtn(type='button' onclick='showFModal()') Following list
+      #myFModal.fModal
+        // Modal content
+        .fModal-content
+          span.fClose(onclick='closeFModal()') ×
+          ul#followingList
+      h4
+        | About: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        | sed do eiusmod tempor incididunt ut labore et dolore magna
+        | aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        | ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        | Duis aute irure dolor in reprehenderit in voluptate velit
+        | esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        | occaecat cupidatat non proident, sunt in culpa qui officia
+        | deserunt mollit anim id est laborum.
+    .recentViewed
+      h1 Recently Viewed
+      .recentMovies
+        p1
+          a(href='viewMovie.html') Movie 1
+        p2 Movie 2
+        p3 Movie 3
+        p4 Movie 4
+        p5 Movie 5
+    .topReviews
+      h1 Top Reviews
+      .reviews
+        p1 Review 1
+        p2 Review 2
+        p3 Review 3
+        p4 Review 4
+        p5 Review 5
+    .sugUsers
+      h1 Suggested Users
+      ol#sugUsersList
+    script(src='MovieProject.js')
+    script(src='UserProfile.js')
+    script(src='User.js')

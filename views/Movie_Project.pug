@@ -1,51 +1,207 @@
 doctype html
-head
-  //link(rel='stylesheet' type='text/css' href='test.css')
-  style
-    include Movie_Project.css
-  script(src='User.js')
-  script(src='MovieProject.js')
-.header
-  // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
-  b1
-    button.btnSignIn(type='submit' onclick='openForm()') Sign In
-  h1 i-SEE FLICKS
-  i1
-    input#search(placeholder='search' autocomplete='off' type='text' name='search')
-  ul#movieList
-  script(src='SearchBar.js')
-.sugMovies
-  h1 Suggested Movies
-  .sugMovieSlide
-    .sugtext Movie One
-  .sugMovieSlide
-    .sugtext Movie Two
-  .sugMovieSlide
-    .sugtext Movie Three
-  .sugMovieSlide
-    .sugtext Movie Four
-  .sugMovieSlide
-    .sugtext Movie Five
-.watchList
-  h1 From Your Watchlist
-  p1 Add more shows and movies to keep track of what you want to watch
-.trendingActors
-  h1 Trending Actors
-  .actors
-    p1 Actor 1
-    p2 Actor 2
-    p3 Actor 3
-    p4 Actor 4
-    p5 Actor 5
-#myForm.signinPopup
-  form.signinContainer
-    h1 Sign In
-    label(for='name')
-      b Name
-    input#name(type='text' placeholder='Enter Email' name='name' required='')
-    label(for='psw')
-      b Password
-    input#psw(type='password' placeholder='Enter Password' name='psw' required='')
-    button.btn(type='button' onclick='userProfile()') Login
-    button.btn.cancel(type='button' onclick='closeForm()') Close
-    button.btn.createAcc(type='submit' onclick='newAccount()') Create New Account
+html
+    //link(rel='stylesheet', href='Movie_Project.css')
+    head
+        <link rel="stylesheet" type="text/css" href="/css/Movie_Project.css" />
+        //include ./Movie_Project.css
+        script(src='./User.js')
+        script(src='./MovieProject.js')
+        //-style(type="text/css").
+            html {
+                box-sizing: border-box;
+                background-color: whitesmoke;
+            }
+
+            .header {
+                background-color: rgb(77, 77, 77);
+                padding: 50px;
+            }
+
+            body {
+                margin: 0; 
+            }
+
+            .header .btnSignIn {
+                background-color: rgb(182, 182, 182);
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                cursor: pointer;
+                margin-bottom:10px;
+                opacity: 0.8;
+                float: right;
+                border-radius: 2
+            }
+
+            .header h1 {
+                text-align: left;
+                margin: 0;
+                padding: 0;
+                font-size: 52px; font-family: Prata, serif; color: white;
+                text-shadow: 3px 1px #00ccff;
+            }
+
+            .header i1 {
+                position: relative;
+                left: 885px;
+                bottom: 77px;
+            }
+
+            .header ul {
+                position: relative;
+                left: 860px;
+                bottom: 70px;
+            
+            }
+
+            .header ul li {
+                display:block;
+                padding: 15px 10px 17px 13px;   
+            }
+
+
+
+
+            .sugMovies {
+                background-color: rgb(182, 182, 182);
+                padding: 30px;
+                position: relative;
+            }
+
+            .sugMovies h1 {
+                text-align: center;
+
+            }
+
+            .sugMovieSlide {
+                display: none;
+            }
+
+            .sugtext {
+                font-size: large;
+                position: relative;
+                text-align: center;
+            }
+
+            .watchList {
+                background-color: rgb(228, 228, 228);
+                padding: 50px;
+                border:2px solid black;
+            }
+
+            .watchList p1{
+                text-align: center;
+
+            }
+            .trendingActors{
+                background-color: rgb(228, 228, 228);
+                padding: 80px;
+                position: relative;
+                border: 2px solid black;
+                border-top: none;
+            }
+
+            .trendingActors h1 {
+                position: relative;
+                margin-block-end: 0;
+                padding: 0;
+                margin: 0;
+            }
+
+            .actors{
+                position: relative;
+                text-align: center;
+                bottom: 25px;
+            }
+
+            .signinPopup {
+                display: none;
+                z-index: 1; /* Sit on top */
+                position: fixed;
+                bottom: 0;
+                right: 15px;
+                border: 3px solid #ffffff;
+            }
+
+            .signinContainer {
+                max-width: 250px;
+                padding: 10px;
+                background-color: white;
+            }
+
+            .signinContainer h1 {
+                font-family: Prata;
+            }
+            
+            .signinContainer input[type=text], .signinContainer input[type=password] {
+                width: 90%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: none;
+                background: #ffffff;
+            }
+
+            .signinContainer .btn {
+                background-color: rgb(168, 168, 168);
+                color: white;
+                padding: 16px 20px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                margin-bottom:10px;
+                opacity: 0.8;
+            }
+
+            .signinContainer .cancel {
+                background-color: black;
+            }
+
+            .signinContainer .createAcc {
+                background-color: rgb(151, 151, 70);
+            }
+            //
+    body
+        .header
+            // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
+            b1
+                button.btnSignIn(type='submit' onclick='openForm()') Sign In
+            h1 i-SEE FLICKS
+            i1
+                input#search(placeholder='search' autocomplete='off' type='text' name='search')
+            ul#movieList
+            script(src='SearchBar.js')
+        .sugMovies
+            h1 Suggested Movies
+            .sugMovieSlide
+                .sugtext Movie One
+            .sugMovieSlide
+                .sugtext Movie Two
+            .sugMovieSlide
+                .sugtext Movie Three
+            .sugMovieSlide
+                .sugtext Movie Four
+            .sugMovieSlide
+                .sugtext Movie Five
+        .watchList
+            h1 From Your Watchlist
+            p1 Add more shows and movies to keep track of what you want to watch
+        .trendingActors
+            h1 Trending Actors
+            .actors
+                p1 Actor 1
+                p2 Actor 2
+                p3 Actor 3
+                p4 Actor 4
+                p5 Actor 5
+        #myForm.signinPopup
+            form.signinContainer
+                h1 Sign In
+                label(for='name')
+                    b Name
+                input#name(type='text' placeholder='Enter Email' name='name' required='')
+                label(for='psw')
+                    b Password
+                input#psw(type='password' placeholder='Enter Password' name='psw' required='')
+                button.btn(type='button' onclick='userProfile()') Login
+                button.btn.cancel(type='button' onclick='closeForm()') Close
+                button.btn.createAcc(type='submit' onclick='newAccount()') Create New Account
