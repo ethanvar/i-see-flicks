@@ -3,9 +3,8 @@ html
     //link(rel='stylesheet', href='Movie_Project.css')
     head
         <link rel="stylesheet" type="text/css" href="/css/Movie_Project.css" />
-        //include ./Movie_Project.css
-        script(src='./User.js')
-        script(src='/javascript/MovieProject.js')
+        script(src='/scripts/User.js')
+        script(src='/scripts/MovieProject.js')
     body
         .header
             // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
@@ -15,7 +14,7 @@ html
             i1
                 input#search(placeholder='search' autocomplete='off' type='text' name='search')
             ul#movieList
-            script(src='SearchBar.js')
+            script(src='/scripts/SearchBar.js')
         .sugMovies
             h1 Suggested Movies
             .sugMovieSlide
