@@ -56,7 +56,7 @@ function userProfile() {
     console.log(x);
     console.log(y);
     if (doesExist({name: x, password: y})) {
-        localStorage.setItem(x);
+        //localStorage.setItem(x);
         console.log("Access Granted");
         location.href = "/UserProfile";
     }
