@@ -116,3 +116,111 @@ body {
     position: relative;
     text-align: center;
 }
+
+.actor {
+    padding: 50px;
+    padding-top: 30px;
+}
+
+.actor p1 {
+    font-size: 12px;
+    position: relative;
+    bottom : 135px;
+    
+}
+
+.actor p2 {
+    font-size: 12px;
+    position: relative;
+    top: 15px;
+    right: 295px;
+    
+}
+
+.knownFor {
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    position: relative;
+    border: 2px solid rgb(195, 201, 200);
+}
+.knownFor h1 {
+    text-align: center;
+}
+
+.movieSlide {
+    display: none;
+}
+
+.movietext {
+    font-size: large;
+    position: relative;
+    text-align: center;
+}
+
+.filmography {
+    padding: 20px;
+}
+
+.filmography h1{
+    position: relative;
+    text-align: center;
+}
+
+.films{
+    position: relative;
+    text-align: center;
+}
+
+.actor {
+    padding: 50px;
+    padding-top: 30px;
+}
+
+.actor p1 {
+    font-size: 12px;
+    position: relative;
+    bottom : 135px;
+    
+}
+
+.actor p2 {
+    font-size: 12px;
+    position: relative;
+    top: 15px;
+    right: 295px;
+    
+}
+
+.knownFor {
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    position: relative;
+    border: 2px solid rgb(195, 201, 200);
+}
+.knownFor h1 {
+    text-align: center;
+}
+
+.movieSlide {
+    display: none;
+}
+
+.movietext {
+    font-size: large;
+    position: relative;
+    text-align: center;
+}
+
+.filmography {
+    padding: 20px;
+}
+
+.filmography h1{
+    position: relative;
+    text-align: center;
+}
+
+.films{
+    position: relative;
+    text-align: center;
+}

@@ -21,18 +21,18 @@ html(lang='en')
       textarea#writeReview(name='writeReview' rows='4' cols='50' placeholder='Leave a review...')
       input(type='submit' value='Submit')
 
-      .commentForm
-        h6 Add Comment
-        |     Name: 
-        input#nameR(type='text')
-        br
-        br
-        |     Date: 
-        input#date(type='date')
-        br
-        br
-        |     Body: 
-        textarea#bodyText(rows='5' col='30')
-        input#addComment(type='button' value='Add Comment')
-      #commentContainer
-        script(src='/scripts/reviewMovie.js')
+    .commentForm
+      h6 Add Comment
+      |     Name: 
+      input#nameR(type='text')
+      br
+      br
+      |     Date: 
+      input#date(type='date')
+      br
+      br
+      |     Body: 
+      textarea#bodyText(rows='5' col='30')
+      input#addComment(type='button' value='Add Comment')
+    .commentContainer
+      script(src='/scripts/reviewMovie.js')
