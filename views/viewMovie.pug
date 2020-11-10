@@ -15,8 +15,24 @@ html(lang='en')
       p3 Director:
       p4 Writers:
       p5 Stars:
+     
     .reviewSection
       h1 Review Movie
       textarea#writeReview(name='writeReview' rows='4' cols='50' placeholder='Leave a review...')
       input(type='submit' value='Submit')
-    script(src='/scripts/SearchBar.js')
+
+      .commentForm
+        h6 Add Comment
+        |     Name: 
+        input#nameR(type='text')
+        br
+        br
+        |     Date: 
+        input#date(type='date')
+        br
+        br
+        |     Body: 
+        textarea#bodyText(rows='5' col='30')
+        input#addComment(type='button' value='Add Comment')
+      #commentContainer
+        script(src='/scripts/reviewMovie.js')
