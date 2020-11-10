@@ -8,7 +8,7 @@ html
     body
         include ./partials/header
         .sugMovies
-            h1 Suggested Movies
+            h1 #{ok}
             .sugMovieSlide
                 .sugtext Movie One
             .sugMovieSlide
@@ -35,7 +35,7 @@ html
                 h1 Sign In
                 label(for='name')
                     b Name
-                input#name(type='text' placeholder='Enter Email' name='name' required='')
+                input#name(type='text' placeholder='Enter Username' name='name' required='')
                 label(for='psw')
                     b Password
                 input#psw(type='password' placeholder='Enter Password' name='psw' required='')

@@ -16,21 +16,33 @@ app.set("view engine", "pug");
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+let ok = "tetst";
 app.get('/', function(req, res) {
-    res.render(__dirname + '/views/movie_Project.pug')
+    res.render(__dirname + '/views/Movie_Project', {ok : ok})
 });
 
 app.get('/SignUp', function(req, res){
-    res.render(__dirname + '/views/SignUp.pug')
+    res.render(__dirname + '/views/SignUp')
 });
 
-app.get('/UserProfile', function(req, res){
-    res.render(__dirname + '/views/UserProfile.pug')
-});
+/*app.get('/UserProfile', function(req, res){
+    res.render(__dirname + '/views/UserProfile')
+});*/
+
+let userProfileRouter = require("./userinfo-router");
+app.use("/UserProfile", userProfileRouter);
 
 app.get('/viewMovie', function(req, res){
-    res.render(__dirname + '/views/viewMovie.pug')
+    res.render(__dirname + '/views/viewMovie')
 });
+
+app.get('/Actor', function(req, res){
+    res.render(__dirname + '/views/Actor')
+});
+
+/*let searchRouter = require("/public/scripts/searchBar");
+app.use("/users", userRouter);*/
+
 
 app.listen(3000, function (req, res) {
     console.log('Server running at http://localhost:3000');

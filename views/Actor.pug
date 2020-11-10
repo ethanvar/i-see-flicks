@@ -3,14 +3,7 @@ html(lang='en')
   head
     <link rel="stylesheet" type="text/css" href="/css/Actor.css" />
   body
-    .header
-      // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
-      b1
-        button.btnSignIn(type='button' onclick='openForm()') Sign In
-        button.btnSignOut(type='button') Sign Out
-      h1 i-SEE FLICKS
-      i1
-        input#searchBox(type='text' placeholder='Search...')
+    include ./partials/header
     .actor
       h1 Actor Name
       img(src='ProfilePic.png' alt='Profile' width='150' position:='' relative='')
