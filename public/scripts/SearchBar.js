@@ -57,6 +57,10 @@ function redirect() {
     location.href = "/viewMovie";
 }
 
+function openForm() {
+    location.href = "/SignIn";
+}
+
 function clearList() {
     while (list.firstChild) {
         list.removeChild(list.firstChild);

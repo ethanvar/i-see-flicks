@@ -1,0 +1,44 @@
+.signinPopup {
+    z-index: 1; /* Sit on top */
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #ffffff;
+}
+
+.signinContainer {
+    max-width: 250px;
+    padding: 10px;
+    background-color: white;
+}
+
+.signinContainer h1 {
+    font-family: Prata;
+}
+  
+.signinContainer input[type=text], .signinContainer input[type=password] {
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #ffffff;
+}
+
+.signinContainer .btn {
+    background-color: rgb(168, 168, 168);
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+.signinContainer .cancel {
+    background-color: black;
+}
+
+.signinContainer .createAcc {
+    background-color: rgb(151, 151, 70);
+}

@@ -40,6 +40,10 @@ app.get('/Actor', function(req, res){
     res.render(__dirname + '/views/Actor')
 });
 
+app.get('/SignIn', function(req, res){
+    res.render(__dirname + '/views/SignIn')
+});
+
 /*let searchRouter = require("/public/scripts/searchBar");
 app.use("/users", userRouter);*/
 

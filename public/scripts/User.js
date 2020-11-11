@@ -16,6 +16,10 @@ function doesExist(newUser) {
      return exist;
 }
 
+function createNewAccount() {
+    location.href = "/SignUp";
+}
+
 function createUser(newUser) {
     console.log("checking validity of name and password");
     if (newUser.name === null || newUser.password === null) {
@@ -56,13 +60,17 @@ function userProfile() {
     console.log(x);
     console.log(y);
     if (doesExist({name: x, password: y})) {
-        localStorage.setItem("tesi",x);
+        //localStorage.setItem("tesi",x);
         console.log("Access Granted");
         location.href = "/UserProfile";
     }
     else {
         console.log("Access Not Granted");
     }
+}
+
+function openForm() {
+    location.href = "/SignIn";
 }
 
 
