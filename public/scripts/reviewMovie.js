@@ -1,4 +1,4 @@
-<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>;
 function render(data){
     var html = data.name + data.date + data.body;
     $('#commentContainer').append(html);

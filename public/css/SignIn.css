@@ -1,15 +1,14 @@
-.signinPopup {
-    z-index: 1; /* Sit on top */
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #ffffff;
+html {
+    box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
 }
-
 .signinContainer {
     max-width: 250px;
     padding: 10px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    left: 650px;
+    top: 100px;
 }
 
 .signinContainer h1 {

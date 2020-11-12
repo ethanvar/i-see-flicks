@@ -1,3 +1,11 @@
+
+/*
+const express = require('express');
+const path = require('path');
+const fs = require("fs");
+
+let router = express.Router();
+*/
 var users = [
    {name: 'A', password: '1234'},
     {name: "B", password: '1234'},
@@ -72,5 +80,8 @@ function userProfile() {
 function openForm() {
     location.href = "/SignIn";
 }
+function closeForm() {
+    location.href = "/";
+}
 
-
+//module.exports = router;

@@ -1,9 +1,9 @@
-const express = require('express');
+/*const express = require('express');
 const path = require('path');
 const fs = require("fs");
 
 let router = express.Router();
-
+*/
 var movies = [{"Title" : "incredibles"},
                 {"Title" : "avengers"},
                 {"Title" : "transformers"},
@@ -57,15 +57,25 @@ function redirect() {
     location.href = "/viewMovie";
 }
 
-function openForm() {
-    location.href = "/SignIn";
-}
+
 
 function clearList() {
     while (list.firstChild) {
         list.removeChild(list.firstChild);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
