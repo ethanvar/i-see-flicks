@@ -1,18 +1,17 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>;
 function render(data){
     var html = data.name + data.date + data.body;
-    $('#commentContainer').append(html);
+    $('#container').append(html);
 }
 
 $(document).ready(function() {
-    var comment =[{"name":"a", "date":"10 Apr, 2020", "body":"hi"}];
+    var comment =[{"name":"David", "date":"10 Apr, 2020", "body":"Great Movie"}];
     for (let i = 0; i<comment.length;i++) {
         render(comment[i]);
     }
     
     $('#addComment').click(function(){
         var addObj = {
-            "name": $('#nameR').val(),
+            "name": $('#name').val(),
             "date": $('#date').val(),
             "body": $('#bodyText').val()
         };

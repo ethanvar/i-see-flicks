@@ -4,6 +4,7 @@ const fs = require("fs");
 
 let router = express.Router();
 */
+/*
 var movies = [{"Title" : "incredibles"},
                 {"Title" : "avengers"},
                 {"Title" : "transformers"},
@@ -15,13 +16,21 @@ var movies = [{"Title" : "incredibles"},
                 {"Title" : "uncut gems"},
                 {"Title" : "grown ups"},
 ];
+*/
+
+let movieData = require("./movie-data-short.json");
+
+var title = {}
+movieData.forEach(c=> {
+    title[c.Title.toUpperCase()] = c;
+});
 
 var searchMovie = document.getElementById("search");
 searchMovie.addEventListener("input", (event) => {
     let value = event.target.value;
     if (value && value.length >= 1) {
         value = value.toLowerCase();
-        fillMovieList(movies.filter(movie => {
+        fillMovieList(title.filter(movie => {
             return movie.Title.includes(value);
         }))
     }else if (value && value.length <= 0){
