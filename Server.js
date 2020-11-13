@@ -25,16 +25,11 @@ app.get('/SignUp', function(req, res){
     res.render(__dirname + '/views/SignUp')
 });
 
-/*app.get('/UserProfile', function(req, res){
-    res.render(__dirname + '/views/UserProfile')
-});*/
-
 let userProfileRouter = require("./userinfo-router");
 app.use("/UserProfile", userProfileRouter);
 
-app.get('/viewMovie', function(req, res){
-    res.render(__dirname + '/views/viewMovie')
-});
+let viewMovieRouter = require("./movie-router");
+app.use("/viewMovie", viewMovieRouter);
 
 app.get('/Actor', function(req, res){
     res.render(__dirname + '/views/Actor')

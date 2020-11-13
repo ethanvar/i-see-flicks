@@ -18,7 +18,7 @@ var movies = [{"Title" : "incredibles"},
 ];
 */
 
-let movieData = require("./movie-data-short.json");
+let movieData = require("/movie-data-short.json");
 
 var title = {}
 movieData.forEach(c=> {
