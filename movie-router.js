@@ -68,10 +68,17 @@ function getMovies(req, res, next) {
             ((!req.properParams.minrating) || (req.properParams.minrating == currentMovie.minrating.toUpperCase()));
         
         if (didweFindourMovie) {
-            finalMovies.push()
+            finalMovies.push(currentMovie);
         }
-
     }
+    res.format({
+        'text/html': function () {
+            console.log("The request was HTML.. ")
+            if (finalMovies.length == null) {
+                res.status(404)
+            }
+        }
+    })
 }
 
 router.get('/', function(req, res){
