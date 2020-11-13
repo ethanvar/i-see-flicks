@@ -4,7 +4,6 @@ const fs = require("fs");
 
 let router = express.Router();
 
-
 let movieData = require("./movie-data-short.json");
 
 var titles = {}
@@ -28,8 +27,8 @@ console.log(titles)
 console.log("Minratings: ")
 console.log(minratings)
 
-router.get("/viewMovie", parseQuery, getMovie);
-router.get("/viewMovie/:movieTitle", sendMovie);
+router.get("/viewMovie", parseQuery, getMovies);
+//router.get("/viewMovie/:movieTitle", sendMovie);
 
 function parseQuery(req, res, next) {
     req.properParams = {}
@@ -51,13 +50,14 @@ function parseQuery(req, res, next) {
         req.properParams.minrating = req.query.minrating.toUpperCase;
         console.log("The movies must have rating: " + req.query.minrating.toUpperCase());
     }
+
     next();
 }
 
 function getMovies(req, res, next) {
     let finalMovies = [];
-    for (let id in movies) {
-        let currentMovie = movies[id];
+    for (let Title in titles) {
+        let currentMovie = titles[Title];
         let didweFindourMovie = 
             ((!req.properParams.title) || (req.properParams.title == currentMovie.title.toUpperCase()))
             &&

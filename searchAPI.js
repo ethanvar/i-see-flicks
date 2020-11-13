@@ -30,3 +30,61 @@ console.log(genre);
 console.log("----------------------------------------------------");
 console.log("Rating");
 console.log(minrating);
+
+app.get("")
+
+function parseQuery(req, res, next) {
+    req.properParams = {}
+
+    if (req.query.title && title.hasOwnProperty(req.query.title.toUpperCase())) {
+        req.properParams.title = req.query.title.toUpperCase;
+        console.log("The movies must have title: " + req.query.title.toUpperCase());
+    }
+    if (req.query.year && year.hasOwnProperty(req.query.year.toUpperCase())) {
+        req.properParams.year = req.query.year.toUpperCase;
+        console.log("The movies must have year: " + req.query.year.toUpperCase());
+    }
+
+    if (req.query.genre && genre.hasOwnProperty(req.genre.title.toUpperCase())) {
+        req.properParams.genre = req.query.genre.toUpperCase;
+        console.log("The movies must have genre: " + req.query.genre.toUpperCase());
+    }
+    if (req.query.minrating && minrating.hasOwnProperty(req.query.minrating.toUpperCase())) {
+        req.properParams.minrating = req.query.minrating.toUpperCase;
+        console.log("The movies must have rating: " + req.query.minrating.toUpperCase());
+    }
+    console.log("--------------------------------");
+    console.log("This is what our organized parameters look like within req.properParams");
+    console.log(req.properParams);
+    console.log("--------------------------------");
+
+    next();
+
+}
+function getMovies(req, res, next) {
+    let finalMovies = [];
+    for (let id in movies) {
+        let currentMovie = movies[id];
+        let didweFindourMovie = 
+            ((!req.properParams.title) || (req.properParams.title == currentMovie.title.toUpperCase()))
+            &&
+            ((!req.properParams.year) || (req.properParams.year == currentMovie.year.toUpperCase()))
+            &&
+            ((!req.properParams.genre) || (req.properParams.genre == currentMovie.genre.toUpperCase()))
+            &&
+            ((!req.properParams.minrating) || (req.properParams.minrating == currentMovie.minrating.toUpperCase()));
+        
+        if (didweFindourMovie) {
+            finalMovies.push(currentMovie);
+        }
+
+    }
+    res.format({
+        'text/html': function () {
+            console.log("The request was HTML.. ")
+            if (finalMovies.length == null) {
+                res.status(404)
+            }
+        }
+    })
+}
