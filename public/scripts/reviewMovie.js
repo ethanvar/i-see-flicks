@@ -1,21 +1,20 @@
-function render(data){
-    var html = data.name + data.date + data.body;
-    $('#container').append(html);
+function render(review){
+    var html = review.nameR + " " + review.dateR + " " + review.bodyR + " ";
+    $('#containerReview').append(html);
 }
 
 $(document).ready(function() {
-    var comment =[{"name":"David", "date":"10 Apr, 2020", "body":"Great Movie"}];
-    for (let i = 0; i<comment.length;i++) {
-        render(comment[i]);
+    var review =[];
+    for (let i = 0; i < review .length;i++) {
+        render(review [i]);
     }
-    
-    $('#addComment').click(function(){
-        var addObj = {
-            "name": $('#name').val(),
-            "date": $('#date').val(),
-            "body": $('#bodyText').val()
+    $('#addReview').click(function(){
+        var addReview = {
+            "nameR": $('#nameReview').val(),
+            "dateR": $('#dateReview').val(),
+            "bodyR": $('#bodyReview').val()
         };
-        comment.push(addObj);
-        render(addObj);
+        review.push(addReview);
+        render(addReview);
     });
 });

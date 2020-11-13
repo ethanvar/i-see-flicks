@@ -25,18 +25,19 @@ app.get('/SignUp', function(req, res){
     res.render(__dirname + '/views/SignUp')
 });
 
-let userProfileRouter = require("./userinfo-router");
-app.use("/UserProfile", userProfileRouter);
+/*let userProfileRouter = require("./userinfo-router");
+app.use("/UserProfile", userProfileRouter);*/
 
 let viewMovieRouter = require("./movie-router");
 app.use("/viewMovie", viewMovieRouter);
 
+let signInRouter = require("./SignIn-router");
+app.use("/SignIn", signInRouter);
+
+//app.use("/LogInUser", signInRouter);
+
 app.get('/Actor', function(req, res){
     res.render(__dirname + '/views/Actor')
-});
-
-app.get('/SignIn', function(req, res){
-    res.render(__dirname + '/views/SignIn')
 });
 
 /*let searchRouter = require("/public/scripts/searchBar");

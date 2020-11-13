@@ -5,14 +5,14 @@ html(lang='en')
     script(src='/scripts/User.js')
   body
     #myForm.signinPopup
-            form.signinContainer
+            form.signinContainer(method="POST" action="/SignIn/logInUser")
                 h1 Sign In
                 label(for='name')
                     b Name
                 input#name(type='text' placeholder='Enter Username' name='name' required='')
                 label(for='psw')
                     b Password
-                input#psw(type='password' placeholder='Enter Password' name='psw' required='')
-                button.btn(type='button' onclick='userProfile()') Login
+                input#psw(type='password' placeholder='Enter Password' name='password' required='')
+                button.btn(type='submit') Login
                 button.btn.cancel(type='button' onclick='closeForm()') Close
                 button.btn.createAcc(type='submit' onclick='createNewAccount()') Create New Account

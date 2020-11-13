@@ -7,7 +7,7 @@ const fs = require("fs");
 let router = express.Router();
 */
 var users = [
-   {name: 'A', password: '1234'},
+    {name: 'A', password: '1234'},
     {name: "B", password: '1234'},
     {name: "C", password: '1234'}
 ];
@@ -70,7 +70,8 @@ function userProfile() {
     if (doesExist({name: x, password: y})) {
         //localStorage.setItem("tesi",x);
         console.log("Access Granted");
-        location.href = "/UserProfile";
+        //location.href = "/UserProfile";
+        location.href = "/SingIn/" + x;
     }
     else {
         console.log("Access Not Granted");

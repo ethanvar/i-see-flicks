@@ -16,21 +16,18 @@ html(lang='en')
       p4 Writers:
       p5 Stars:
      
-    .form
+    .commentForm
       h6 Add Comment
-      |     Name: 
-      input#name(type='text')
+      input#nameReview(type= "text" placeholder= "name...")
       br
       br
-      |     Date: 
-      input#date(type='date')
+      input#dateReview(type= "date")
       br
       br
-      |     Body: 
-      textarea#bodyText(rows='5' col='30')
-      input#addComment(type='button' value='Add Comment')
-    #container
+      textarea#bodyReview(rows= "1" col= "5" placeholder= "review...")
+      input#addReview(type="button" value="Add Review")
+    #containerReview
 
-  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
-  script(src='/scripts/reviewMovie.js')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+  script(src="/scripts/reviewMovie.js")
   

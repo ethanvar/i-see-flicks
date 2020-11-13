@@ -63,11 +63,9 @@ function parseQuery(req, res, next) {
 }
 function getMovies(req, res, next) {
     let finalMovies = [];
-    for (let id in movies) {
-        let currentMovie = movies[id];
+    for (let Title in title) {
+        let currentMovie = title[Title];
         let didweFindourMovie = 
-            ((!req.properParams.title) || (req.properParams.title == currentMovie.title.toUpperCase()))
-            &&
             ((!req.properParams.year) || (req.properParams.year == currentMovie.year.toUpperCase()))
             &&
             ((!req.properParams.genre) || (req.properParams.genre == currentMovie.genre.toUpperCase()))
@@ -83,7 +81,10 @@ function getMovies(req, res, next) {
         'text/html': function () {
             console.log("The request was HTML.. ")
             if (finalMovies.length == null) {
-                res.status(404)
+                res.status(404).send(JSON.stringify(finalMovies))
+            }
+            else {
+                res.render('index', {items:finalMovies});
             }
         }
     })

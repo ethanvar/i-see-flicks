@@ -19,12 +19,16 @@ movieData.forEach(c=> {
 })
 
 console.log("TITLEs: ")
+console.log("----------------------------------------------------------")
 console.log(titles)
 console.log("years: ")
+console.log("----------------------------------------------------------")
 console.log(years)
 console.log("TITLEs: ")
+console.log("----------------------------------------------------------")
 console.log(titles)
 console.log("Minratings: ")
+console.log("----------------------------------------------------------")
 console.log(minratings)
 
 router.get("/viewMovie", parseQuery, getMovies);
@@ -50,7 +54,6 @@ function parseQuery(req, res, next) {
         req.properParams.minrating = req.query.minrating.toUpperCase;
         console.log("The movies must have rating: " + req.query.minrating.toUpperCase());
     }
-
     next();
 }
 
