@@ -1,9 +1,30 @@
+//const { text } = require("body-parser");
+
 /*const express = require('express');
 const path = require('path');
 const fs = require("fs");
 
 let router = express.Router();
-*/
+
+$.getJSON("movie-data-short.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
+});
+
+var movies = {}
+var titles = {}
+var years = {}
+var genres = {}
+var minratings = {}
+
+json.forEach(c=> {
+    movies[c.Title] = c
+    titles[c.Title.toUpperCase()] = 1;
+    years[c.Year.toUpperCase()] = 1;
+    genres[c.Genre.toUpperCase()] = 1;
+    minratings[c.imdbRating] = 1;
+})
+
+console.log(movies)*/
 
 var movies = [{"Title" : "incredibles"},
                 {"Title" : "avengers"},
@@ -15,6 +36,18 @@ var movies = [{"Title" : "incredibles"},
                 {"Title" : "apollo 13"},
                 {"Title" : "uncut gems"},
                 {"Title" : "grown ups"},
+                {"Title" : "jumanji"},
+                {"Title" : "grumpier old men"},
+                {"Title" : "Father of the Bride Part II"},
+                {"Title" : "Father of the Bride Part II"},
+                {"Title" : "TOY STORY"},
+                {"Title" : "WAITING TO EXHALE"},
+                {"Title" : "TOM AND HUCK"},
+                {"Title" : "HEAT"},
+                {"Title" : "SABRINA"},
+                {"Title" : "SUDDEN DEATH"},
+                {"Title" : "GOLDENEYE"}
+
 ];
 
 
@@ -45,7 +78,9 @@ function fillMovieList(collection) {
     for (let movie of collection) {
         var movieItem = document.createElement("li");
         var text = document.createTextNode(movie.Title);
-        movieItem.onclick = function() {redirect()};
+        var upperText = movie.Title.toUpperCase();
+        movieItem.onclick = function() { redirect(); };
+        /*location.href = "/viewMovie/" + encodeURIComponent("title") + '=' + encodeURIComponent(upperText) + "&"*/
         movieItem.id = text;
         movieItem.appendChild(text);
         list.appendChild(movieItem);
@@ -63,7 +98,9 @@ function NoResultsFound() {
 }
 
 function redirect() {
+    //console.log("this is the" + text)
     location.href = "/viewMovie";
+    //location.href = "/viewMovie"
 }
 
 

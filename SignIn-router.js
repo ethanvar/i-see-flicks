@@ -22,79 +22,72 @@ router.use(express.urlencoded({extended: true}));
 
 router.use(session({
     cookie: {
-        maxAge: 500000000000000
+        maxAge: 700000000000000
     },
-    secret: 'Im Batman'
+    secret: 'Frank Ocean'
 
 }))
 
 router.use('/', function (req, res, next) {
-    console.log(res.session);
+    console.log(req.session);
     next()
 })
 
 //GET post 
-router.get('/', logInPage);
-router.get('/views/UserProfile/:name', sendUser);
-router.get('../logOut', logOut);
+router.get('/', signIn);
+router.get('/views/UserProfile/:name', updateUser);
+router.get('../logOut', signOut);
 
-router.post('/logInUser', logInUser);
+router.post('/logInUser', userLogin);
 
-function logInPage(req, res){
-    console.log("inside singin router")
+function signIn(req, res){
+    console.log("inside SignIn router")
     res.render(__dirname + '/views/SignIn', {session: req.session})
 }
 
-function logInUser(req, res) {
-    console.log("---------------------------------")
-    console.log(" POST /logInUser accessed ")
-    console.log("---------------------------------")
+function userLogin(req, res) {
+    console.log("POST accessing /userLogin")
 
-    if (session.loggedin == true) {
-        res.send("You are already loggin in")
+    if (session.signedin == true) {
+        res.send("It appears you are already logged in")
     }
     else {
-        let logUser = req.body;
-        console.log("User thats trying to log in: " + req.body.name);
-        let authenBool = true;
-        users.forEach(u=> {
-            if (logUser.name == u.name && logUser.password == u.password) {
-                console.log("Found the user! Logging him in");
-                req.session.name = logUser.name
-                req.session.loggedin = true;
-                console.log("---------------------------------");
-                console.log("User has been found, moving on to retrieve the user");
-                console.log(logUser.name)
-                console.log("---------------------------------")
+        let loginOfUser = req.body;
+        console.log("User attempting sign in " + req.body.name);
+        let verify = true;
+        users.forEach(user=> {
+            if (user.name == loginOfUser.name && user.password == loginOfUser.password) {
+                console.log("User Found. logging in");
+                console.log(req.body)
+                req.session.name = loginOfUser.name
+                req.session.signedin = true;
+                console.log("User found. Getting the user");
+                console.log(loginOfUser.name)
 
-                res.status(200).redirect(`views/UserProfile/${u.name}`)           
+                res.status(200).redirect(`views/UserProfile/${user.name}`)           
             }
         })
-        if (authenBool) {
-            res.status(401).send("You entered the wrong username of password try again!")
+        if (verify) {
+            res.status(401).send("Incorrect username and password")
         }
     }
 }
 
-function logOut(req, res) {
+function signOut(req, res) {
     req.session.destroy();
     res.redirect('/SignIn')
 }
 
-function sendUser(req, res) {
-    console.log("-------------------------");
-    console.log(" GET /users accessed");
-    console.log("-------------------------");
-    
-    let userID = req.params.name;
-    users.forEach(u=> {
-        if (userID == u.name) {
-            console.log(u);
-            console.log("-------------------------");
-            console.log("Found the requestsed user, providing profile page");
-            console.log("-------------------------")
+function updateUser(req, res) {
+    console.log("GET accessing /users");
 
-            res.status(200).render("UserProfile.pug", { user: u, session: req.session})
+    let id = req.params.name;
+    users.forEach(user=> {
+        if (user.name == id) {
+            console.log(user);
+            console.log("Found specified user. Updating user profile");
+
+            res.status(200).render("UserProfile.pug", { user: user, session: req.session})
         }
     })
 }

@@ -10,13 +10,13 @@ app.set("view engine", "pug");
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({
+/*app.use(session({
     cookie: {
         maxAge: 500000000000000
     },
     secret: 'Im Batman'
 
-}))
+}))*/
 
 app.use('/', function (req, res, next) {
     console.log(req.session);
@@ -46,6 +46,7 @@ app.use("/SignIn", signInRouter);
 app.get('/Actor', function(req, res){
     res.render(__dirname + '/views/Actor')
 });
+
 
 /*let searchRouter = require("/public/scripts/searchBar");
 app.use("/users", userRouter);*/

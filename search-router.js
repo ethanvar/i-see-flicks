@@ -2,8 +2,6 @@ const express = require('express');
 const path = require('path');
 const fs = require("fs");
 
-console.log("inside the movie-router")
-
 let router = express.Router();
 
 let movieData = require("./movie-data-short.json");
@@ -36,7 +34,7 @@ console.log("----------------------------------------------------------")
 console.log(minratings)*/
 
 router.get("/viewMovie", parseQuery, getMovies);
-router.get("/viewMovie/:movieTitle", sendMovie);
+router.get("/viewMovie/:movieTitle", updateMovie);
 
 function parseQuery(req, res, next) {
     req.properParams = {}
@@ -58,10 +56,8 @@ function parseQuery(req, res, next) {
         req.properParams.minrating = req.query.minrating.toUpperCase;
         console.log("The movies must have rating: " + req.query.minrating.toUpperCase());
     }
-    console.log("--------------------------------");
     console.log("This is what our organized parameters look like within req.properParams");
     console.log(req.properParams);
-    console.log("--------------------------------");
 
     next();
 
@@ -71,13 +67,13 @@ function getMovies(req, res, next) {
     for (let Title in movies) {
         let currentMovie = movie[Title];
         let didweFindourMovie = 
-            ((!req.properParams.title) || (req.properParams.title == currentMovie.title.toUpperCase()))
+            ((req.properParams.title == currentMovie.title.toUpperCase()) || (!req.properParams.title))
             &&
-            ((!req.properParams.year) || (req.properParams.year == currentMovie.year.toUpperCase()))
+            ((req.properParams.year == currentMovie.year.toUpperCase()) || (!req.properParams.year))
             &&
-            ((!req.properParams.genre) || (req.properParams.genre == currentMovie.genre.toUpperCase()))
+            ((req.properParams.genre == currentMovie.genre.toUpperCase()) || (!req.properParams.genre))
             &&
-            ((!req.properParams.minrating) || (req.properParams.minrating == currentMovie.minrating.toUpperCase()));
+            ((req.properParams.minrating == currentMovie.minrating.toUpperCase()) || (!req.properParams.minrating));
         
         if (didweFindourMovie) {
             finalMovies.push(currentMovie);
@@ -97,15 +93,15 @@ function getMovies(req, res, next) {
     })
 }
 
-function sendMovie(req, res, next) {
+function updateMovie(req, res, next) {
     let movieID = req.params.title;
     if (movies.hasOwnProperty(movieID)) {
         res.status(200).render("viewMovie.pug", { movie: movie[movieID], session: req.session})
     }
 }
 
-router.get('/', function(req, res){
+/*router.get('/', function(req, res){
     res.render(__dirname + '/views/viewMovie')
-});
+});*/
 
 module.exports = router;

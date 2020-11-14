@@ -82,7 +82,7 @@ function logIn() {
     location.href = "/SignIn";
 }
 function logOut() {
-    location.href = "/logOut"
+    location.href = "/SignIn/logOut"
 }
 function closeForm() {
     location.href = "/";
