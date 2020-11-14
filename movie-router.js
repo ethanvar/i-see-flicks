@@ -18,7 +18,7 @@ movieData.forEach(c=> {
     minratings[c.imdbRating] = 1;
 })
 
-console.log("TITLEs: ")
+/*console.log("TITLEs: ")
 console.log("----------------------------------------------------------")
 console.log(titles)
 console.log("years: ")
@@ -29,7 +29,7 @@ console.log("----------------------------------------------------------")
 console.log(titles)
 console.log("Minratings: ")
 console.log("----------------------------------------------------------")
-console.log(minratings)
+console.log(minratings)*/
 
 router.get("/viewMovie", parseQuery, getMovies);
 //router.get("/viewMovie/:movieTitle", sendMovie);

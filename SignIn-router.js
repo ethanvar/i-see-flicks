@@ -1,14 +1,16 @@
 const express = require('express');
 const path = require('path');
 const fs = require("fs");
+const session = require('express-session')
+
 /*router.get('/', function(req, res){
     res.render(__dirname + '/views/SignIn')
 });*/
 
 var users = [
-    {id: 1, name: 'A', password: '1234'},
-    {id: 2, name: "B", password: '1234'},
-    {id: 3, name: "C", password: '1234'}
+    {id: 1, name: 'Ethan', password: '1234'},
+    {id: 2, name: "Matt", password: '1234'},
+    {id: 3, name: "Jacob", password: '1234'}
 ];
 
 let router = express.Router();
@@ -18,7 +20,6 @@ router.use(express.static("public"));
 router.use(express.static(path.join(__dirname, 'public')));
 router.use(express.urlencoded({extended: true}));
 
-const session = require('express-session')
 router.use(session({
     cookie: {
         maxAge: 500000000000000
@@ -26,7 +27,6 @@ router.use(session({
     secret: 'Im Batman'
 
 }))
-
 
 router.use('/', function (req, res, next) {
     console.log(res.session);
@@ -36,7 +36,7 @@ router.use('/', function (req, res, next) {
 //GET post 
 router.get('/', logInPage);
 router.get('/views/UserProfile/:name', sendUser);
-//router.get('/logOut', logOut);
+router.get('../logOut', logOut);
 
 router.post('/logInUser', logInUser);
 
@@ -60,11 +60,11 @@ function logInUser(req, res) {
         users.forEach(u=> {
             if (logUser.name == u.name && logUser.password == u.password) {
                 console.log("Found the user! Logging him in");
-                //req.sessionn.name = logUser.name
-                //req.session.loggedin = true;
+                req.session.name = logUser.name
+                req.session.loggedin = true;
                 console.log("---------------------------------");
                 console.log("User has been found, moving on to retrieve the user");
-                console.log(`/views/UserProfile/${u.name}`)
+                console.log(logUser.name)
                 console.log("---------------------------------")
 
                 res.status(200).redirect(`views/UserProfile/${u.name}`)           

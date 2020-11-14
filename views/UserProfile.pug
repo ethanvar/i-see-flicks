@@ -3,7 +3,10 @@ html(lang='en')
   head
     <link rel="stylesheet" type="text/css" href="/css/UserProfile.css" />
   body
-    include ./partials/header
+    if(session.loggedin)
+      include ./partials/headertwo
+    else
+      include ./partials/header
     .userPfp
       h1#userName #{user.name}
       img(src='ProfilePic.png' alt='Profile' width='150' position:='' absolute='')

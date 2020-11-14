@@ -78,8 +78,11 @@ function userProfile() {
     }
 }
 
-function openForm() {
+function logIn() {
     location.href = "/SignIn";
+}
+function logOut() {
+    location.href = "/logOut"
 }
 function closeForm() {
     location.href = "/";

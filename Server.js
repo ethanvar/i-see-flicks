@@ -2,19 +2,26 @@
 const express = require('express');
 const app = express();
 const pug = require('pug');
+const session = require('express-session')
 
 var path = require('path');
-
-/*app.set("views", path.join(__dirname, "i-see-flicks"));
-app.use(express.static(__dirname));
-// viewed at http://localhost:3000
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname,'Movie_Project.html'));
-}); */
 
 app.set("view engine", "pug");
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+    cookie: {
+        maxAge: 500000000000000
+    },
+    secret: 'Im Batman'
+
+}))
+
+app.use('/', function (req, res, next) {
+    console.log(req.session);
+    next()
+})
 
 let ok = "tetst";
 app.get('/', function(req, res) {
