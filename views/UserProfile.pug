@@ -9,9 +9,10 @@ html(lang='en')
       include ./partials/header
     .userPfp
       h1#userName #{user.name}
-      img(src='ProfilePic.png' alt='Profile' width='150' position:='' absolute='')
+      //img(src='ProfilePic.png' alt='Profile' width='150' position:='' absolute='')
       button.btnEdit(type='button') Edit Profile
       button.followerBtn(type='button' onclick='showModal()') Follower list
+      input#contributingUser(type='radio' name='Contributing User' value='Contributing User' checked='')
       #myModal.modal
         // Modal content
         .modal-content
@@ -46,5 +47,5 @@ html(lang='en')
       h1 Suggested Users
       ol#sugUsersList
     script(src='/scripts/MovieProject.js')
-    script(src='/scripts/UserProfile.js')
+    //script(src='/scripts/UserProfile.js')
     script(src='/scripts/User.js')

@@ -1,17 +1,21 @@
 const express = require('express');
 const path = require('path');
 const fs = require("fs");
-const session = require('express-session')
+const session = require('express-session');
+const { response } = require('express');
+
+let file = fs.readFileSync('users.json');
+let users = JSON.parse(file);
 
 /*router.get('/', function(req, res){
     res.render(__dirname + '/views/SignIn')
 });*/
 
-var users = [
+/*var users = [
     {id: 1, name: 'Ethan', password: '1234'},
     {id: 2, name: "Matt", password: '1234'},
     {id: 3, name: "Jacob", password: '1234'}
-];
+];*/
 
 let router = express.Router();
 
@@ -35,8 +39,8 @@ router.use('/', function (req, res, next) {
 
 //GET post 
 router.get('/', signIn);
-router.get('/views/UserProfile/:name', updateUser);
-router.get('../logOut', signOut);
+router.get('/:name', updateUser);
+//router.get('/logOut', signOut);
 
 router.post('/logInUser', userLogin);
 
@@ -64,7 +68,7 @@ function userLogin(req, res) {
                 console.log("User found. Getting the user");
                 console.log(loginOfUser.name)
 
-                res.status(200).redirect(`views/UserProfile/${user.name}`)           
+                res.status(200).redirect(`${user.name}`)           
             }
         })
         if (verify) {
@@ -73,10 +77,11 @@ function userLogin(req, res) {
     }
 }
 
-function signOut(req, res) {
+/*function signOut(req, res) {
+    console.log("sing out")
     req.session.destroy();
-    res.redirect('/SignIn')
-}
+    res.redirect('/')
+}*/
 
 function updateUser(req, res) {
     console.log("GET accessing /users");
@@ -84,10 +89,12 @@ function updateUser(req, res) {
     let id = req.params.name;
     users.forEach(user=> {
         if (user.name == id) {
+            console.log("user found");
             console.log(user);
             console.log("Found specified user. Updating user profile");
 
-            res.status(200).render("UserProfile.pug", { user: user, session: req.session})
+            //res.render(__dirname + '/views/UserProfile', { user: user, session: req.session})
+            res.status(200).render("UserProfile.pug", {session: req.session, user: user})
         }
     })
 }

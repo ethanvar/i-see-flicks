@@ -26,6 +26,11 @@ app.get('/SignUp', function(req, res){
     res.render(__dirname + '/views/SignUp')
 });
 
+app.get('/logOut', function(req, res){
+    console.log("sign out")
+    res.redirect('/SignIn')
+});
+
 /*let userProfileRouter = require("./userinfo-router");
 app.use("/UserProfile", userProfileRouter);*/
 
