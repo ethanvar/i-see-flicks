@@ -10,13 +10,7 @@ app.set("view engine", "pug");
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*app.use(session({
-    cookie: {
-        maxAge: 500000000000000
-    },
-    secret: 'Im Batman'
 
-}))*/
 
 app.use('/', function (req, res, next) {
     console.log(req.session);
