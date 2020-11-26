@@ -5,25 +5,16 @@ html(lang='en')
   body
     .header
       // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
-      b1
-        button#btnSignUp(type='button') Create your new account
-        // <button type="button" id="btnSignIn" onclick="openForm()">Sign In</button>
       h1 i-SEE FLICKS
     #myForm.signupPopup
-      form.signupContainer
+      form.signupContainer(method="POST" action="/SignUp/createUser")
         h1 Create Account
         label(for='name')
-          b Name
-        input#name(type='text' placeholder='Enter Name' name='name' required='')
-        label(for='email')
-          b Email
-        input#email(type='text' iplaceholder='Enter Email' name='email' required='')
+            b Name
+        input#name(type='text' placeholder='Enter Username' name='name' required='')
         label(for='psw')
-          b Password
-        input#psw(type='password' placeholder='at least 8 characters' name='psw' required='')
-        label(for='repsw')
-          b Re-enter Password
-        input#repsw(type='password' name='repsw' required='')
+            b Password
+        input#psw(type='password' placeholder='Enter Password' name='password' required='')
         button.btn.home(type='button' onclick='goHome()') Home
-        button.btn.createAcc(type='button' onclick='newAccount()') Create your new account
+        button.btn.createAcc(type='submit') Create your new account
     script(src='/scripts/User.js')

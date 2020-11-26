@@ -24,13 +24,13 @@ router.use(express.static("public"));
 router.use(express.static(path.join(__dirname, 'public')));
 router.use(express.urlencoded({extended: true}));
 
-router.use(session({
+/*router.use(session({
     cookie: {
         maxAge: 700000000000000
     },
     secret: 'Frank Ocean'
 
-}))
+}))*/
 
 router.use('/', function (req, res, next) {
     console.log(req.session);
@@ -39,7 +39,7 @@ router.use('/', function (req, res, next) {
 
 //GET post 
 router.get('/', signIn);
-router.get('/:name', updateUser);
+//router.get('../:name', updateUser);
 //router.get('/logOut', signOut);
 
 router.post('/logInUser', userLogin);
@@ -64,11 +64,12 @@ function userLogin(req, res) {
                 console.log("User Found. logging in");
                 console.log(req.body)
                 req.session.name = loginOfUser.name
+                req.session.password = loginOfUser.password;
                 req.session.signedin = true;
                 console.log("User found. Getting the user");
                 console.log(loginOfUser.name)
 
-                res.status(200).redirect(`${user.name}`)           
+                res.status(200).redirect(`../${user.name}`)           
             }
         })
         if (verify) {
@@ -82,7 +83,7 @@ function userLogin(req, res) {
     req.session.destroy();
     res.redirect('/')
 }*/
-
+/*
 function updateUser(req, res) {
     console.log("GET accessing /users");
 
@@ -97,6 +98,6 @@ function updateUser(req, res) {
             res.status(200).render("UserProfile.pug", {session: req.session, user: user})
         }
     })
-}
+}*/
 
 module.exports = router;

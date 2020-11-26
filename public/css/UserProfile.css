@@ -12,6 +12,10 @@ body {
     position: relative;
     border: 2px solid black;
 }
+.userPfp .contributingUser {
+    position: relative;
+    left: 200px;
+}
 
 .userPfp .btnEdit {
     background-color: rgb(182, 182, 182);

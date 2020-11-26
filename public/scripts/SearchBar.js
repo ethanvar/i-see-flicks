@@ -38,15 +38,15 @@ var movies = [{"Title" : "incredibles"},
                 {"Title" : "grown ups"},
                 {"Title" : "jumanji"},
                 {"Title" : "grumpier old men"},
-                {"Title" : "Father of the Bride Part II"},
-                {"Title" : "Father of the Bride Part II"},
-                {"Title" : "TOY STORY"},
-                {"Title" : "WAITING TO EXHALE"},
-                {"Title" : "TOM AND HUCK"},
-                {"Title" : "HEAT"},
-                {"Title" : "SABRINA"},
-                {"Title" : "SUDDEN DEATH"},
-                {"Title" : "GOLDENEYE"}
+                {"Title" : "father of the bride part I"},
+                {"Title" : "father of the bride part II"},
+                {"Title" : "toy story"},
+                {"Title" : "waiting to exhale"},
+                {"Title" : "tom and huck"},
+                {"Title" : "heat"},
+                {"Title" : "sabrina"},
+                {"Title" : "sudden death"},
+                {"Title" : "goldeneye"}
 
 ];
 
