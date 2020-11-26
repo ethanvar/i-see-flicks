@@ -34,13 +34,7 @@ function createAUser(req, res) {
     let verify = true;
     users.forEach(user=> {
         if (user.name == loginOfUser.name && user.password == loginOfUser.password) {
-            console.log("User Found. logging in");
-            console.log(req.body)
-            req.session.name = loginOfUser.name
-            req.session.password = loginOfUser.password;
-            req.session.signedin = true;
-            console.log("User found. Getting the user");
-            console.log(loginOfUser.name)
+            
 
             res.status(200).redirect(`../${user.name}`)           
         }
