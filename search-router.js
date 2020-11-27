@@ -1,10 +1,26 @@
 const express = require('express');
 const path = require('path');
 const fs = require("fs");
+const session = require('express-session');
+const { response } = require('express');
+
+let file = fs.readFileSync('users.json');
+let users = JSON.parse(file);
 
 let router = express.Router();
 
+router.use(express.static(__dirname + '../public'));
+router.use(express.static("public"));
+router.use(express.static(path.join(__dirname, 'public')));
+router.use(express.urlencoded({extended: true}));
+
 let movieData = require("./movie-data-short.json");
+
+router.get('/', searchMovie);
+function signIn(req, res){
+    console.log("inside SignIn router")
+    res.render(__dirname + '/views/SignIn', {session: req.session})
+}
 
 var movies = {}
 var titles = {}

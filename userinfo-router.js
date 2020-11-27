@@ -50,4 +50,20 @@ function userLogin(req, res) {
     }
 }
 
+function updateUser(req, res) {
+    console.log("GET accessing /users");
+
+    let id = req.params.name;
+    users.forEach(user=> {
+        if (user.name == id) {
+            console.log("user found");
+            console.log(user);
+            console.log("Found specified user. Updating user profile");
+
+            //res.render(__dirname + '/views/UserProfile', { user: user, session: req.session})
+            res.status(200).render("UserProfile.pug", {session: req.session, user: user})
+        }
+    })
+}
+
 module.exports = router;
