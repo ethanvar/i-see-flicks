@@ -63,8 +63,8 @@ function userLogin(req, res) {
             if (user.name == loginOfUser.name && user.password == loginOfUser.password) {
                 console.log("User Found. logging in");
                 console.log(req.body)
-                req.session.name = loginOfUser.name
-                req.session.password = loginOfUser.password;
+                req.session.name = user.name
+                req.session.password = user.password;
                 req.session.signedin = true;
                 console.log("User found. Getting the user");
                 console.log(loginOfUser.name)

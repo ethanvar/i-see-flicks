@@ -15,11 +15,74 @@ router.use(express.static(path.join(__dirname, 'public')));
 router.use(express.urlencoded({extended: true}));
 
 let movieData = require("./movie-data-short.json");
+/*
+$(function () {
 
-router.get('/', searchMovie);
-function signIn(req, res){
-    console.log("inside SignIn router")
+    $("#search").autocomplete({
+        source: function (request, response) {
+           $.ajax({
+              url: "/search_member",
+              type: "GET",
+              data: request,  // request is the value of search input
+              success: function (data) {
+                // Map response values to fiedl label and value
+                 response($.map(data, function (el) {
+                    return {
+                       label: el.fullname,
+                       value: el._id
+                    };
+                    }));
+                 }
+              });
+           },
+           
+           // The minimum number of characters a user must type before a search is performed.
+           minLength: 1,
+           
+           // set an onFocus event to show the result on input field when result is focused
+           focus: function (event, ui) {
+              this.value = ui.item.label;
+              // Prevent other event from not being execute
+              event.preventDefault();
+           },
+           select: function (event, ui) {
+              // Prevent value from being put in the input:
+              this.value = ui.item.label;
+              // Set the id to the next input hidden field
+              $(this).next("input").val(ui.item.value);
+              // Prevent other event from not being execute            
+              event.preventDefault();
+              // optionnal: submit the form after field has been filled up
+              //$('#quicksearch').submit();
+           }
+    });
+  
+  });
+*/
+router.use('/', function (req, res, next) {
+    console.log(req.session);
+    next()
+})
+
+function movieIn(req, res){
+    console.log("inside movie router")
     res.render(__dirname + '/views/SignIn', {session: req.session})
+}
+
+function enter() {
+    if (event.key === 'enter') {
+        router.get('/', movieIn);
+    }
+}
+
+router.use('/', function (req, res, next) {
+    console.log(req.session);
+    next()
+})
+router.get('/', searchMovie);
+function movieIn(req, res){
+    console.log("inside movie router")
+    res.render(__dirname + '/views/viewMovie', {session: req.session})
 }
 
 var movies = {}
@@ -35,6 +98,59 @@ movieData.forEach(c=> {
     genres[c.Genre.toUpperCase()] = 1;
     minratings[c.imdbRating] = 1;
 })
+var searchMovie = document.getElementById("search");
+searchMovie.addEventListener("input", (event) => {
+    let value = event.target.value;
+    if (value && value.length >= 1) {
+        value = value.toLowerCase();
+        fillMovieList(movieData.filter(movie => {
+            return movie.Title.includes(value);
+        }))
+    }else if (value && value.length <= 0){
+        clearList();
+    }
+});  
+
+var list = document.getElementById('movieList');
+
+function fillMovieList(collection) {
+    clearList();
+    for (let movie of collection) {
+        var movieItem = document.createElement("li");
+        var text = document.createTextNode(movie.Title);
+        var upperText = movie.Title.toUpperCase();
+        movieItem.onclick = function() { redirect(); };
+        //location.href = "/viewMovie/" + encodeURIComponent("title") + '=' + encodeURIComponent(upperText) + "&"
+        movieItem.id = text;
+        movieItem.appendChild(text);
+        list.appendChild(movieItem);
+    }
+    if (collection.length == 0) {
+        NoResultsFound();
+    }
+}
+function NoResultsFound() {
+    var movieItem = document.createElement("li");
+    var text = document.createTextNode("No results could be found");
+    movieItem.id = text;
+    movieItem.appendChild(text);
+    list.appendChild(movieItem);
+}
+
+function redirect() {
+    //console.log("this is the" + text)
+    location.href = "/viewMovie";
+    //location.href = "/viewMovie"
+}
+
+
+
+function clearList() {
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+}
+
 
 /*console.log("TITLEs: ")
 console.log("----------------------------------------------------------")
@@ -48,6 +164,7 @@ console.log(titles)
 console.log("Minratings: ")
 console.log("----------------------------------------------------------")
 console.log(minratings)*/
+
 
 router.get("/viewMovie", parseQuery, getMovies);
 router.get("/viewMovie/:movieTitle", updateMovie);

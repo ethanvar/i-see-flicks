@@ -1,3 +1,1 @@
-[{"id": 1, "name": "Ethan", "password": "1234"},
-{"id": 2, "name": "Matt", "password": "1234"},
-{"id": 3, "name": "Jacob", "password": "1234"}]
+[{"name":"Ethan","password":"1234"},{"name":"Matt","password":"1234"},{"name":"Jacob","password":"1234"},{"name":"Alan","password":"1234"}]

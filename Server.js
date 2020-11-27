@@ -12,7 +12,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 let file = fs.readFileSync('users.json');
-let users = JSON.parse(file);
 
 app.use(session({
     cookie: {
@@ -59,6 +58,7 @@ app.get('/Actor', function(req, res){
 app.get('/:name', updateUser);
 
 function auth(req, res, next) {
+    let users = JSON.parse(file);
     let authorized = 0;
     users.forEach(user=> {
         if (user.name == req.session.name && user.password == req.session.password) {
@@ -70,10 +70,12 @@ function auth(req, res, next) {
 }
 
 function updateUser(req, res) {
+    let users = JSON.parse(file);
     console.log("GET accessing /users");
 
-    let id = req.params.name;
+    let id = req.session.name;
     users.forEach(user=> {
+        console.log(user.name);
         if (user.name == id) {
             console.log("user found");
             console.log(user);
@@ -82,7 +84,35 @@ function updateUser(req, res) {
             res.status(200).render("UserProfile.pug", {session: req.session, user: user})
         }
     })
+    res.status(401).send("No name found")
 }
+/*const mongoose = require("'mongoose'");
+var movieData = require("./movie-data-short.json");
+
+User = mongoose.model('User'); // Declare a new mongoose User
+
+app.get('/search_member', function(req, res) {
+   var regex = new RegExp(req.query["term"], 'i');
+   var query = User.find({fullname: regex}, { 'fullname': 1 }).sort({"updated_at":-1}).sort({"created_at":-1}).limit(20);
+       
+      // Execute query in a callback and return users list
+  query.exec(function(err, movieData) {
+      if (!err) {
+         // Method to construct the json result set
+         var result = buildResultSet(movieData);
+         res.send(result, {
+            'Content-Type': 'application/json'
+         }, 200);
+      } else {
+         res.send(JSON.stringify(err), {
+            'Content-Type': 'application/json'
+         }, 404);
+      }
+   });
+});*/
+
+
+
 
 app.listen(3000, function (req, res) {
     console.log('Server running at http://localhost:3000');

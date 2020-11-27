@@ -7,14 +7,14 @@ html(lang='en')
       // <img src="officiallogo.png" alt="Logo" width="300" height=auto postion:absolute top: 110px left: 50px;>
       h1 i-SEE FLICKS
     #myForm.signupPopup
-      form.signupContainer(method="POST" action="/SignUp/createUser")
-        h1 Create Account
-        label(for='name')
-            b Name
-        input#name(type='text' placeholder='Enter Username' name='name' required='')
-        label(for='psw')
-            b Password
-        input#psw(type='password' placeholder='Enter Password' name='password' required='')
-        button.btn.home(type='button' onclick='goHome()') Home
-        button.btn.createAcc(type='submit') Create your new account
+            form.signupContainer(method="POST" action="/SignUp/createUser")
+              h1 Create Account
+              label(for='name')
+                  b Name
+              input#name(type='text' placeholder='Enter Username' name='name' required='')
+              label(for='psw')
+                  b Password
+              input#psw(type='password' placeholder='Enter Password' name='password' required='')
+              button.btn.home(type='button' onclick='goHome()') Home
+              button.btn.createAcc(type='submit') Create your new account
     script(src='/scripts/User.js')
