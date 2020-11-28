@@ -11,7 +11,7 @@ app.set("view engine", "pug");
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//let file = fs.readFileSync('users.json');
+let file = fs.readFileSync('users.json');
 let file2 = fs.readFileSync('movie-data-short.json');
 app.use(session({
     cookie: {
@@ -58,7 +58,6 @@ app.get('/Actor', function(req, res){
 app.get('/:name', updateUser);
 
 function auth(req, res, next) {
-    let file = fs.readFileSync('users.json');
     let users = JSON.parse(file);
     let authorized = 0;
     users.forEach(user=> {
@@ -71,7 +70,7 @@ function auth(req, res, next) {
 }
 
 function updateUser(req, res) {
-    let file = fs.readFileSync('users.json');
+    file = fs.readFileSync('users.json');
     users = JSON.parse(file);
     console.log("GET accessing /users");
 
