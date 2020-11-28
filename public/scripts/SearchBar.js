@@ -25,7 +25,7 @@ json.forEach(c=> {
 })
 
 console.log(movies)*/
-
+/*
 var movies = [{"Title" : "incredibles"},
                 {"Title" : "avengers"},
                 {"Title" : "transformers"},
@@ -49,7 +49,7 @@ var movies = [{"Title" : "incredibles"},
                 {"Title" : "goldeneye"}
 
 ];
-
+*/
 
 /*let movieData = require("/movie-data-short.json");
 
@@ -58,6 +58,7 @@ movieData.forEach(c=> {
     title[c.Title.toUpperCase()] = c;
 });
 */
+/*
 var searchMovie = document.getElementById("search");
 searchMovie.addEventListener("input", (event) => {
     let value = event.target.value;
@@ -80,7 +81,7 @@ function fillMovieList(collection) {
         var text = document.createTextNode(movie.Title);
         var upperText = movie.Title.toUpperCase();
         movieItem.onclick = function() { redirect(); };
-        /*location.href = "/viewMovie/" + encodeURIComponent("title") + '=' + encodeURIComponent(upperText) + "&"*/
+        //location.href = "/viewMovie/" + encodeURIComponent("title") + '=' + encodeURIComponent(upperText) + "&"
         movieItem.id = text;
         movieItem.appendChild(text);
         list.appendChild(movieItem);
@@ -110,7 +111,7 @@ function clearList() {
         list.removeChild(list.firstChild);
     }
 }
-
+*/
 
 
 

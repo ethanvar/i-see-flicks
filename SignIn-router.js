@@ -56,6 +56,7 @@ function userLogin(req, res) {
         res.send("It appears you are already logged in")
     }
     else {
+        users = JSON.parse(file);
         let loginOfUser = req.body;
         console.log("User attempting sign in " + req.body.name);
         let verify = true;

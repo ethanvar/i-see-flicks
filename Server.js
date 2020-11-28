@@ -11,8 +11,8 @@ app.set("view engine", "pug");
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-let file = fs.readFileSync('users.json');
-
+//let file = fs.readFileSync('users.json');
+let file2 = fs.readFileSync('movie-data-short.json');
 app.use(session({
     cookie: {
         maxAge: 700000000000000
@@ -58,6 +58,7 @@ app.get('/Actor', function(req, res){
 app.get('/:name', updateUser);
 
 function auth(req, res, next) {
+    let file = fs.readFileSync('users.json');
     let users = JSON.parse(file);
     let authorized = 0;
     users.forEach(user=> {
@@ -70,7 +71,8 @@ function auth(req, res, next) {
 }
 
 function updateUser(req, res) {
-    let users = JSON.parse(file);
+    let file = fs.readFileSync('users.json');
+    users = JSON.parse(file);
     console.log("GET accessing /users");
 
     let id = req.session.name;
@@ -85,6 +87,15 @@ function updateUser(req, res) {
         }
     })
     res.status(401).send("No name found")
+}
+
+
+function updateMovie(req, res, next) {
+    let movies = JSON.parse(file2);
+    let movieID = req.params.Title;
+    if (movies.hasOwnProperty(movieID)) {
+        res.status(200).render("viewMovie.pug", { movie: movie[movieID], session: req.session})
+    }
 }
 /*const mongoose = require("'mongoose'");
 var movieData = require("./movie-data-short.json");

@@ -4,8 +4,8 @@ const fs = require("fs");
 const session = require('express-session');
 const { response } = require('express');
 
-let file = fs.readFileSync('users.json');
-let users = JSON.parse(file);
+let file = fs.readFileSync('movie-data-short.json');
+let movies = JSON.parse(file);
 
 let router = express.Router();
 
@@ -14,7 +14,7 @@ router.use(express.static("public"));
 router.use(express.static(path.join(__dirname, 'public')));
 router.use(express.urlencoded({extended: true}));
 
-let movieData = require("./movie-data-short.json");
+
 /*
 $(function () {
 
@@ -64,24 +64,15 @@ router.use('/', function (req, res, next) {
     next()
 })
 
-function movieIn(req, res){
-    console.log("inside movie router")
-    res.render(__dirname + '/views/SignIn', {session: req.session})
-}
-
 function enter() {
     if (event.key === 'enter') {
         router.get('/', movieIn);
     }
 }
 
-router.use('/', function (req, res, next) {
-    console.log(req.session);
-    next()
-})
-router.get('/', searchMovie);
+router.get('/', searchMovie);s
 function movieIn(req, res){
-    console.log("inside movie router")
+    console.log("inside search router")
     res.render(__dirname + '/views/viewMovie', {session: req.session})
 }
 
@@ -103,7 +94,7 @@ searchMovie.addEventListener("input", (event) => {
     let value = event.target.value;
     if (value && value.length >= 1) {
         value = value.toLowerCase();
-        fillMovieList(movieData.filter(movie => {
+        fillMovieList(movies.filter(movie => {
             return movie.Title.includes(value);
         }))
     }else if (value && value.length <= 0){
