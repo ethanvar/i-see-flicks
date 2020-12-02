@@ -4,9 +4,15 @@
     b1
         button.btnSignIn(type='submit' onclick='logIn()') Sign In
     h1 i-SEE FLICKS 
-    i1
+    //i1
         input#search(placeholder='search' autocomplete='off' type='text' name='search')
-    ul#movieList
+    //ul#movieList
+    #myForm.searchMovie
+        form.searchMovie(method="POST" action="/viewMovie")
+            label(for='movieTitle')
+                b Search Movie Title
+            input#movieTitle(type='text' placeholder='Enter Movie...' movieTitle='movieTitle' required='')
+            button.btn.searchMov(type='submit') Search Movie
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
     script(src='/scripts/SearchBar.js')
-    script(src='/scripts/User.js')
+    script(src='/scripts/User.js') 

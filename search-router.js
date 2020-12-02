@@ -5,7 +5,7 @@ const session = require('express-session');
 const { response } = require('express');
 
 let file = fs.readFileSync('movie-data-short.json');
-let movies = JSON.parse(file);
+let movieData = JSON.parse(file);
 
 let router = express.Router();
 
@@ -13,7 +13,6 @@ router.use(express.static(__dirname + '../public'));
 router.use(express.static("public"));
 router.use(express.static(path.join(__dirname, 'public')));
 router.use(express.urlencoded({extended: true}));
-
 
 /*
 $(function () {
@@ -63,38 +62,34 @@ router.use('/', function (req, res, next) {
     console.log(req.session);
     next()
 })
-
-function enter() {
-    if (event.key === 'enter') {
-        router.get('/', movieIn);
-    }
-}
-
-router.get('/', searchMovie);s
+/*
+router.get('/', searchMovie);
 function movieIn(req, res){
     console.log("inside search router")
     res.render(__dirname + '/views/viewMovie', {session: req.session})
 }
-
+*/
 var movies = {}
 var titles = {}
 var years = {}
 var genres = {}
 var minratings = {}
 
+
 movieData.forEach(c=> {
-    movies[c.Title] = c;
-    titles[c.Title.toUpperCase()] = 1;
+    //movies[c.Title] = c;
+    movies[c.Title.toUpperCase()] = c;
     years[c.Year.toUpperCase()] = 1;
     genres[c.Genre.toUpperCase()] = 1;
     minratings[c.imdbRating] = 1;
 })
+/*
 var searchMovie = document.getElementById("search");
 searchMovie.addEventListener("input", (event) => {
     let value = event.target.value;
     if (value && value.length >= 1) {
         value = value.toLowerCase();
-        fillMovieList(movies.filter(movie => {
+        fillMovieList(movieData.filter(movie => {
             return movie.Title.includes(value);
         }))
     }else if (value && value.length <= 0){
@@ -143,6 +138,7 @@ function clearList() {
 }
 
 
+
 /*console.log("TITLEs: ")
 console.log("----------------------------------------------------------")
 console.log(titles)
@@ -157,10 +153,11 @@ console.log("----------------------------------------------------------")
 console.log(minratings)*/
 
 
-router.get("/viewMovie", parseQuery, getMovies);
-router.get("/viewMovie/:movieTitle", updateMovie);
+router.get("/", parseQuery, getMovies);
+router.get("/:movieTitle", updateMovie);
 
 function parseQuery(req, res, next) {
+    console.log("in parQuery")
     req.properParams = {}
 
     if (req.query.title && title.hasOwnProperty(req.query.title.toUpperCase())) {
@@ -187,6 +184,7 @@ function parseQuery(req, res, next) {
 
 }
 function getMovies(req, res, next) {
+    console.log("in getMovies");
     let finalMovies = [];
     for (let Title in movies) {
         let currentMovie = movie[Title];
@@ -218,6 +216,7 @@ function getMovies(req, res, next) {
 }
 
 function updateMovie(req, res, next) {
+    console.log("in parQuery")
     let movieID = req.params.title;
     if (movies.hasOwnProperty(movieID)) {
         res.status(200).render("viewMovie.pug", { movie: movie[movieID], session: req.session})
