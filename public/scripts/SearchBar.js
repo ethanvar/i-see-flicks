@@ -1,6 +1,6 @@
 //const { text } = require("body-parser");
 
-/*const express = require('express');
+const express = require('express');
 const path = require('path');
 const fs = require("fs");
 
@@ -24,8 +24,8 @@ json.forEach(c=> {
     minratings[c.imdbRating] = 1;
 })
 
-console.log(movies)*/
-/*
+console.log(movies)
+
 var movies = [{"Title" : "incredibles"},
                 {"Title" : "avengers"},
                 {"Title" : "transformers"},
@@ -49,16 +49,16 @@ var movies = [{"Title" : "incredibles"},
                 {"Title" : "goldeneye"}
 
 ];
-*/
 
-/*let movieData = require("/movie-data-short.json");
+
+//let movieData = require("/movie-data-short.json");
 
 var title = {}
 movieData.forEach(c=> {
     title[c.Title.toUpperCase()] = c;
 });
-*/
-/*
+
+
 var searchMovie = document.getElementById("search");
 searchMovie.addEventListener("input", (event) => {
     let value = event.target.value;
@@ -81,7 +81,7 @@ function fillMovieList(collection) {
         var text = document.createTextNode(movie.Title);
         var upperText = movie.Title.toUpperCase();
         movieItem.onclick = function() { redirect(); };
-        //location.href = "/viewMovie/" + encodeURIComponent("title") + '=' + encodeURIComponent(upperText) + "&"
+        location.href = "/viewMovie/" + encodeURIComponent("title") + '=' + encodeURIComponent(upperText) + "&"
         movieItem.id = text;
         movieItem.appendChild(text);
         list.appendChild(movieItem);
@@ -111,7 +111,7 @@ function clearList() {
         list.removeChild(list.firstChild);
     }
 }
-*/
+
 
 
 

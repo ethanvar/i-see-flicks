@@ -51,8 +51,8 @@ app.use("/SignIn", signInRouter);
 let signUpRouter = require("./SignUp-router");
 app.use("/SignUp", signUpRouter);
 
-let searchRouter = require("./search-router");
-app.use("/Search", searchRouter);
+//let searchRouter = require("./search-router");
+//app.use("/Search", searchRouter);
 
 app.get('/Actor', function(req, res){
     res.render(__dirname + '/views/Actor')
