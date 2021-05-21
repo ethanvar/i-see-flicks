@@ -6,7 +6,7 @@ const fs = require("fs");
 
 let router = express.Router();
 
-$.getJSON("movie-data-short.json", function(json) {
+/*$.getJSON("movie-data-short.json", function(json) {
     console.log(json); // this will show the info it in firebug console
 });
 
@@ -24,7 +24,7 @@ json.forEach(c=> {
     minratings[c.imdbRating] = 1;
 })
 
-console.log(movies)
+console.log(movies)*/
 
 var movies = [{"Title" : "incredibles"},
                 {"Title" : "avengers"},
