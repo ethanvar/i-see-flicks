@@ -53,10 +53,10 @@ var movies = [{"Title" : "incredibles"},
 
 //let movieData = require("/movie-data-short.json");
 
-var title = {}
+/*var title = {}
 movieData.forEach(c=> {
     title[c.Title.toUpperCase()] = c;
-});
+});*/
 
 
 var searchMovie = document.getElementById("search");

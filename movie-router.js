@@ -35,8 +35,8 @@ console.log("Minratings: ")
 console.log("----------------------------------------------------------")
 console.log(minratings)*/
 
-router.get("/viewMovie", parseQuery, getMovies);
-router.get("/viewMovie/:movieTitle", sendMovie);
+router.get("/viewMovie", getMovies);
+//router.get("/viewMovie/:movieTitle", sendMovie);
 
 function parseQuery(req, res, next) {
     req.properParams = {}

@@ -59,6 +59,8 @@ function userLogin(req, res) {
         users = JSON.parse(file);
         let loginOfUser = req.body;
         console.log("User attempting sign in " + req.body.name);
+        console.log(req.body);
+        console.log("ok");
         let verify = true;
         users.forEach(user=> {
             if (user.name == loginOfUser.name && user.password == loginOfUser.password) {

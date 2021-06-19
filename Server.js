@@ -42,14 +42,13 @@ app.get('/logOut', function(req, res){
     res.redirect('/SignIn')
 });
 
-let viewMovieRouter = require("./movie-router");
-app.use("/viewMovie", viewMovieRouter);
+//let viewMovieRouter = require("./movie-router");
+//app.use("/viewMovie", viewMovieRouter);
+
+app.post("/viewMovie", updateMovie);
 
 let signInRouter = require("./SignIn-router");
 app.use("/SignIn", signInRouter);
-
-let signUpRouter = require("./SignUp-router");
-app.use("/SignUp", signUpRouter);
 
 let searchRouter = require("./search-router");
 app.use("/Search", searchRouter);
@@ -93,11 +92,13 @@ function updateUser(req, res) {
 
 
 function updateMovie(req, res, next) {
-    let movies = JSON.parse(file2);
-    let movieID = req.params.Title;
-    if (movies.hasOwnProperty(movieID)) {
-        res.status(200).render("viewMovie.pug", { movie: movie[movieID], session: req.session})
-    }
+    console.log("print");
+    //let movies = JSON.parse(file2);
+    let movieID = req.params.movieTitle;
+    console.log(movieID);
+    //if (movies.hasOwnProperty(movieID)) {
+        res.status(200).render("viewMovie.pug", { movie: movieID, session: req.session})
+    //}
 }
 /*const mongoose = require("'mongoose'");
 var movieData = require("./movie-data-short.json");

@@ -62,7 +62,7 @@ function goHome(){
     href = location.href = "Movie_Project.html"
 }
 
-function userProfile() {
+/*function userProfile() {
     let x = document.getElementById("name").value;
     let y = document.getElementById("psw").value;
     console.log(x);
@@ -76,7 +76,7 @@ function userProfile() {
     else {
         console.log("Access Not Granted");
     }
-}
+}*/
 
 function logIn() {
     location.href = "/SignIn";
